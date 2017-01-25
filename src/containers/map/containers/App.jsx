@@ -4,7 +4,6 @@ import { editRow, deleteRow, addRow, toggleDirection } from '../actions';
 
 import DataMap from '../components/DataMap';
 import DataTableBox from '../components/DataTableBox';
-import Navbar from '../components/Navbar';
 
 class Map extends React.Component {
   constructor(props){
@@ -29,7 +28,6 @@ class Map extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div className="datamap-outer-conainer">
           <DataMap regionData={this.props.regionData} />
         </div>

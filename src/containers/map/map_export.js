@@ -1,19 +1,19 @@
 // =============================================================
 // 
-// 	view.js
+//  map_export.js
 //
 // =============================================================
 
 import React, { Component } from 'react';
 
-import Map from '../containers/map/map_export';
+import Map from './containers/App';
 
-export default class MapImport extends Component {
+export default class MapExport extends Component {
   render() {
     return (
-    	<div>
- 			<Map />
-      	</div>
+        <div>
+            <Map />
+        </div>
     );
   }
 }

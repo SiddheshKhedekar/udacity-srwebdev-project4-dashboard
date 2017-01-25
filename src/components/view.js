@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 // custom components
 import Nav from './nav';
 import Footer from './footer';
-
+import Map from './map';
 
 export default class View extends Component {
   render() {
@@ -17,7 +17,9 @@ export default class View extends Component {
     	<div>
     	<Nav />
       <div>React simple starter</div>
-      
+      <div>
+		<Map />
+      </div>
       		<Footer />
       		</div>
     );

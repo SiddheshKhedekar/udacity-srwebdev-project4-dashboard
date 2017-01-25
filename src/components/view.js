@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 // custom components
 import Nav from './nav';
 import Footer from './footer';
-import Map from '../containers/map/map';
+import Map from './map';
 
 export default class View extends Component {
   render() {

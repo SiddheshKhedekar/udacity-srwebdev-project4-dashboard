@@ -41,11 +41,11 @@ $(document).ready(function() {
     $('#example').DataTable( {
         data: dataSet,
         columns: [
-            { title: "Name" },
+            { title: "Employee Name" },
             { title: "Position" },
             { title: "Office" },
             { title: "Extn." },
-            { title: "Start date" },
+            { title: "Date Submitted" },
             { title: "Salary" }
         ]
     } );

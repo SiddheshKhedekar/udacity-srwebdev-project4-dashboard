@@ -14,14 +14,17 @@ import Map from '../containers/map/map';
 export default class View extends Component {
   render() {
     return (
-    	<div>
-    	<Nav />
+      <div>
+      <Nav />
+    	<main className="container">
+    	
       <div>React simple starter</div>
       <div>
-		<Map />
+		    <Map />
       </div>
-      		<Footer />
-      		</div>
+      </main>
+      <Footer />
+    </div>
     );
   }
 }

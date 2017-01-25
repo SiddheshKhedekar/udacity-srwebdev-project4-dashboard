@@ -39,6 +39,8 @@ $ npm build
 
 [ReduxSimpleStarter] (https://github.com/StephenGrider/ReduxSimpleStarter)
 
+[simple-data-table-map] (https://github.com/caspg/simple-data-table-map)
+
 ##  Tutorials
 
 [Udemy - Modern React with Redux] (https://www.udemy.com/react-redux/)

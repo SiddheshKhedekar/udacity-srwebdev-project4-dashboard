@@ -1,8 +1,12 @@
 ** Changelog for Dashoard
 
+v0.3
+- prototype to add data table / filtering with jQuery and JSON
+- prototype to use styling for each component
+
 v0.2
 - scrapped routing idea for simple application setup
-- prototype to add better semantics and styling
+- bettered semantics and styling
 - added functioning geo-map to application - original API here : https://react.rocks/example/simple-data-table-map
 
 v0.1

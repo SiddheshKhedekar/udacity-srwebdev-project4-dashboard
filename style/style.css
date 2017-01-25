@@ -1,0 +1,59 @@
+/*===========================================================
+
+    Main Application Styles
+
+===========================================================*/
+
+/*===========================================================
+
+    DOM Component Styles
+
+===========================================================*/
+
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  max-height: auto;
+  margin: 0.5px !important;
+  overflow-x: hidden;
+}
+footer {
+    padding-top: 0 !important;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #efefef;
+    text-align: center;
+}
+
+section {
+    display: inline-block !important;
+}
+nav {
+  background-color: #c3362b;
+  text-align: center;
+}
+.navbar-brand{
+  font-size: 26px !important;
+}
+
+main.container {
+    max-height: 100%;
+}
+.hidden {
+  display: none !important;
+}
+.heightHidden {
+  height: 0;
+}
+
+
+.btn {
+    background-color: #c3362b !important;
+   

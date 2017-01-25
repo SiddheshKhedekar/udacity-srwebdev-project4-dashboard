@@ -1,25 +1,50 @@
-# ReduxSimpleStarter
+# Udacity - Senior Web Developer Nanodegree - By Google - Project 4
+This repository contains all my own programming project files, notes, and associated files for the [Udacity -Senior Web Developer Nanodegree - By Google - Project 4](https://www.udacity.com/course/senior-web-developer-nanodegree-by-google--nd802) course with [Udacity](https://www.udacity.com/). 
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+None of the provided course example files, or content are provided in this repository. To get access to these files, please sign up to the course via the above link.
 
-###Getting Started###
+All rights for the original files used and provided with this course go to 
+[Udacity](https://www.udacity.com/).  
+## Installation
 
-There are two methods for getting started with this repo.
-
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
+Clone the repository from: 
 ```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
+$ git clone https://github.com/escobard/udacity-srwebdev-project4-dashboard.git
 ```
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+Install NPM dependencies:
+```
+$ npm install
+```
+
+## Usage
+
+To run this application locally use the following commands:
 
 ```
-	> npm install
-	> npm start
+$ npm start
 ```
+
+To publish, minimize, and compile components for production use:
+
+```
+$ npm build
+```
+
+## Libraries, Frameworks
+
+[React](https://facebook.github.io/react/)
+
+[Redux] (http://redux.js.org/docs/introduction/)
+
+[ReduxSimpleStarter] (https://github.com/StephenGrider/ReduxSimpleStarter)
+
+##  Tutorials
+
+[Udemy - Modern React with Redux] (https://www.udemy.com/react-redux/)
+
+## Contribution
+Feel free to contribute to any and all of the files within this repository as you see fit. These files are mainly for personal use, but my goal is to help others better understand JavaScript Object Oriented programming with my software and helpful commentary.
+
+## License
+As of October 31st, 2016, these files are open for all to use and contribute to. This repository is protected under the [MIT License](http://choosealicense.com/licenses/mit/).

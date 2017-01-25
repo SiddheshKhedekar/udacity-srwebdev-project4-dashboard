@@ -2,6 +2,7 @@
 
 v0.2
 - scrapped routing idea for simple application setup
+- prototype to add better semantics and styling
 - prototype to begin adding geo map
 
 v0.1

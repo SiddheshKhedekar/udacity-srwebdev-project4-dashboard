@@ -17,8 +17,6 @@ export default class View extends Component {
       <div>
       <Nav />
     	<main className="container">
-    	
-      <div>React simple starter</div>
       <div>
 		    <Map />
       </div>

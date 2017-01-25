@@ -1,8 +1,14 @@
 ** Changelog for Dashoard
 
+v0.4
+- prototype to set up charts and chart data from reducers 
+- prototype to set up action / reducer / components for selecting dashboard pieces
+- begin adding sidebar bootstrap styles 
+
 v0.3
-- prototype to add data table / filtering with jQuery and JSON
-- prototype to use styling for each component
+- added data table to the dashboard application
+- added dependencies for table filtering component
+- updated data for table component
 
 v0.2
 - scrapped routing idea for simple application setup

@@ -4,21 +4,16 @@
 //
 // =============================================================
 
-// this is a base reducer combiner for react-redux
-
 import { combineReducers } from 'redux';
 
-
-// import basic reducer
-import RestaurantReducer from './reducer_restaurants';
-
-// import map reducer
-import mapReducer from '../containers/map/reducers/index';
+import sortState from '../containers/map/reducers/sortState';
+import emptyRegions from '../containers/map/reducers/emptyRegions';
+import regionData from '../containers/map/reducers/regionData';
 
 const rootReducer = combineReducers({
-	restaurants: RestaurantReducer,
-	mapData: mapReducer
-
+  regionData,
+  emptyRegions,
+  sortState
 });
 
 export default rootReducer;

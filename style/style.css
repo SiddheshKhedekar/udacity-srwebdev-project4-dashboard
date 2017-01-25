@@ -28,7 +28,7 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #efefef;
+    background-color: #2c3982 !important;
     text-align: center;
 }
 
@@ -52,7 +52,9 @@ main.container {
 .heightHidden {
   height: 0;
 }
-
+.navbar {
+    background: #2c3982 !important;
+}
 
 .btn {
     background-color: #c3362b !important;

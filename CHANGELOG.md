@@ -1,8 +1,9 @@
 ** Changelog for Dashoard
 
 v0.3
-- prototype to add data table / filtering with jQuery and JSON
-- prototype to use styling for each component
+- added data table to the dashboard application
+- added dependencies for table filtering component
+- prototype to update data for the map and the table component
 
 v0.2
 - scrapped routing idea for simple application setup

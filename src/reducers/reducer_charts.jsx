@@ -17,8 +17,8 @@ function chartReducer() {
 	
 	// returns an array with our data
 	return [
-		{id:"1", data:[100,120,80,140,200,180], name: 'paying customers'},
-		{id: "2", data:[2000,2400,1600,2800, 4000,3600], name: 'reported issues'}
+		{id:"1", data:[100,120,80,140,200,180, 100,120,80,140,200,180,100,120,80,140,200,180,100,120,80,140,200,180], name: 'paying customers'},
+		{id: "2", data:[2000,2400,1600,2800, 4000,3600,2000,2400,1600,2800, 4000,3600,2000,2400,1600,2800, 4000,3600,2000,2400,1600,2800, 4000,3600], name: 'reported issues'}
 		];
 
 }

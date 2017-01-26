@@ -306,3 +306,23 @@ h3.brand {
     font-weight: 700;
     font-family: Roboto, sans-serif;
 }
+/*===========================================================
+
+   Chart Widget Component Styles
+
+===========================================================*/
+.chart .card {
+    margin: 2%;
+    width: 46%;
+    float: left;
+    padding: 2%;
+    text-align: center;
+}
+
+.chart section#1{
+  background-color: #000;
+}
+
+.chart section#2{
+  background-color: #000;
+}

@@ -30,47 +30,40 @@ class Charts extends Component {
 	renderCharts(chartData){
 
 		// sets up the variable to map each pressure array and generate our chart 
-		const names = chartData.name;
+		const name = chartData.name;
 		const data = chartData.data;
 		const id = chartData.id;
 
 		function renderFromData(){
 			if (id == "1"){
-				const lineChartData = data;
-				console.log("line "+lineChartData)
 				return (
-					<id>
+					<div className="chartContainer second animated fadeInUp">
+						<div className="card-block">
+				        	<h4 className="card-title">Forecast for {name}</h4>
+				   		</div>
 						<div className="chartContainer second animated fadeInUp">
-							<ChartSpots chartData={lineChartData} color="#00FF6A" units="%"/>
+							<ChartSpots chartData={data} color="#2c3982" units="%"/>
 						</div>
-					</id>
+					</div>
 					);
 			}
 			else {
-				const barChartData = data;
-				console.log("bar "+barChartData)
 				return (
-					<id>
+					<div>
 						<div className="chartContainer second animated fadeInUp">
-							<ChartBars chartData={barChartData} color="#00FF6A" units="%"/>
+						<div className="card-block">
+				        	<h4 className="card-title">Forecast for {name}</h4>
+				   		</div>
+							<ChartBars chartData={data} color="#2c3982" units="%"/>
 						</div>
-					</id>
+					</div>
 					);
 			}
 		};
-		// sets up the variable to map each humidity array and generate our chart 
-
-		console.log("Names:" + names);
-		console.log("data:" + data);
 		return(
-			<section className="card animated fadeInDown col-md-6" key={id}>
-				    <div className="card-block">
-				        <h4 className="card-title animated fadeInDown">Forecast for {name}</h4>
-				    </div>
-					<div>
+			<div id={id} className="card animated fadeInDown col-md-6" key={id}>
 						{renderFromData()}
-					</div>
-			</section>
+			</div >
 		);
 	}
 	

@@ -404,6 +404,8 @@ article#geomap {
     position: fixed;
     width: 100%;
     padding: 0 !important;
+    top: 0px;
+    z-index: 2;
 }
 
 i.fa.fa-bars.fa-2x.toggle-btn {

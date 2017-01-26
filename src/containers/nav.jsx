@@ -38,9 +38,12 @@ class Nav extends Component {
 		console.log(this.state.searchTerm);
 		console.log(this.state.currentlySelected);
 	}
-  	selectChildView(view){
-		return this.props.selectView(view);
-  	}
+	showMenu(){
+		var rButton = document.querySelector('#responsiveMenu');
+		var rMenu = document.querySelector('#menu-content');
+
+		rMenu.classList.toggle('collapse');
+	}
   	renderClear(){
   		var clean = document.querySelector('.viewDeatils');
   	}
@@ -87,7 +90,7 @@ class Nav extends Component {
 
 			<div className="nav-side-menu">
 			    <h3 className="brand">Dashboard Widgets</h3>
-			    <i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+			    <i id="responsiveMenu" className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content" onClick={() => this.showMenu()}></i>
 			  
 			        <div className="menu-list">
 			  

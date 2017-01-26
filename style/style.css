@@ -77,6 +77,23 @@ header {
     width: 100%;
     height: auto !Important;
 }
+
+
+#searchBar::-webkit-input-placeholder {
+text-align: center;
+}
+
+#searchBar:-moz-placeholder { /* Firefox 18- */
+text-align: center;  
+}
+
+#searchBar::-moz-placeholder {  /* Firefox 19+ */
+text-align: center; 
+}
+
+#searchBar:-ms-input-placeholder {  
+text-align: center; 
+}
 /*===========================================================
 
     Sidemenu Component Styles
@@ -359,5 +376,13 @@ section#viewDetails {
 
 article#geomap {
     padding: 0;
+}
+.col-md-6.card {
+    width: 99%;
+    margin: 1rem 0;
+}
+
+#charts {
+    margin-bottom: 6rem;
 }
 }

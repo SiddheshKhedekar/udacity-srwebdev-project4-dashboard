@@ -16,19 +16,16 @@ class ViewSelected extends Component {
 	// creates the function to apply the outro animation to the view list when the view details are expanded
 	viewHide(){
 
-		var viewDetails = document.querySelector('.viewDetails');
+		var viewDetails = document.querySelector('.detailCard');
 		var viewList = document.querySelector('.viewList');
-		var postReview = document.querySelector('#postReview');
-		var reviewPost = document.querySelector('#reviewPost');
-		viewDetails.classList.remove('fadeInDown');
+
 		viewDetails.classList.add('fadeOut');
-		viewDetails.classList.add('heightHidden');
 		setTimeout(function(){
 			viewDetails.classList.add('hidden');
 		}, 1000);
 		
 		// handles views for the view list
-		viewList.classList.remove('fadeOutDown');
+		viewList.classList.remove('fadeOut');
 		viewList.classList.remove('hidden');
 		viewList.classList.add('fadeInUp');
 		
@@ -44,7 +41,7 @@ class ViewSelected extends Component {
 		}
 		
 		return (
-		<div className="col-md-12 viewDetails animated fadeInUp card">
+		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeIn animated card">
 			
 			<section className="">
 
@@ -55,7 +52,7 @@ class ViewSelected extends Component {
 						<div id="componentDetails" className="animated">
 						</div>
 					</div>
-					<div className="viewList"></div>
+					<div className=""></div>
             		<div className="componentContainer">
 						{this.props.view.component}
 

@@ -15,7 +15,7 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
-import listHide from '../components/render_functions.js'
+import {listHide} from '../components/render_functions.js'
 
 class Nav extends Component {
 	constructor(props){
@@ -40,6 +40,9 @@ class Nav extends Component {
 	}
   	selectChildView(view){
 		return this.props.selectView(view);
+  	}
+  	renderClear(){
+  		var clean = document.querySelector('.viewDeatils');
   	}
   	renderViewLinks(){
   	return this.state.currentlySelected.map((view) => {
@@ -72,7 +75,7 @@ class Nav extends Component {
 		    <div className="container nav-container">
 
 		        <div className="navbar-toggleable-xs" id="collapseEx2">
-		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.7</h1>
+		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.8</h1>
 		        </div>
 
 		    </div>

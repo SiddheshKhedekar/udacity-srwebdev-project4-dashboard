@@ -42,8 +42,6 @@ class View extends Component {
 			searchTerm: event.target.value,
 			currentlySelected: searchFilter
 		});
-		console.log(this.state.searchTerm);
-		console.log(this.state.currentlySelected);
 	}
 	// handles the category select setting of state
 	categoryFilterChange(event){
@@ -60,7 +58,6 @@ class View extends Component {
 		this.setState({
 			currentlySelected: categoryFilter
 		});
-		console.log(this.state.currentlySelected);
 	}
 
 	renderList() {

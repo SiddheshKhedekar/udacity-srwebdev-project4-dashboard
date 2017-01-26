@@ -45,6 +45,7 @@ nav {
 
 main.container {
     max-height: 100%;
+    padding-bottom: 3rem;
 }
 .hidden {
   display: none !important;

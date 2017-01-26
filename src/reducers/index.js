@@ -14,7 +14,7 @@ import regionData from '../containers/map/reducers/regionData';
 import viewReducer from './reducer_views';
 
 // imports our ActiveBook reducer
-import ActiveRestaurant from './reducer_active_restaurant';
+import ActiveView from './reducer_active_view';
 
 const rootReducer = combineReducers({
 	// this assigns the book key to our bookReducer function
@@ -22,8 +22,8 @@ const rootReducer = combineReducers({
 	// and booksReducer is the value of that data state
 	views: viewReducer,
 
-	// assigns our key and value of the ActiveBook reducer
-	activeRestaurant: ActiveRestaurant,
+	// assigns our key and value of the ActiveView reducer
+	activeView: ActiveView,
 	regionData,
 	emptyRegions,
 	sortState

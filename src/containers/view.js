@@ -33,7 +33,7 @@ class View extends Component {
 	categoryFilterChange(event){
 
 		// creates filter
-		let categoryFilter = _.filter(this.props.views,view =>view.category.includes(event.target.value));
+		let categoryFilter = _.filter(this.props.views,view => view.category.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -45,7 +45,7 @@ class View extends Component {
 	priceFilterChange(event){
 
 		// creates filter
-		let priceFilter = _.filter(this.props.views,view =>view.price.includes(event.target.value));
+		let priceFilter = _.filter(this.props.views, view => view.price.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -57,7 +57,7 @@ class View extends Component {
 	ratingFilterChange(event){
 
 		// creates filter 
-		let ratingFilter = _.filter(this.props.views,view =>view.rating.includes(event.target.value));
+		let ratingFilter = _.filter(this.props.views, view => view.rating.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -69,7 +69,7 @@ class View extends Component {
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.views,view =>view.title.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views, view => view.title.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({
@@ -82,8 +82,8 @@ class View extends Component {
 	// creates the function to apply the outro animation to theview list when theview details are expanded
 	listHide(){
 		
-		varviewList = document.querySelector('.viewList');
-		varviewDetails = document.querySelector('.viewDetails');
+		var viewList = document.querySelector('.viewList');
+		var viewDetails = document.querySelector('.viewDetails');
 
 		// handles animations when list is hiding
 		viewList.classList.add('fadeOutDown');
@@ -121,7 +121,7 @@ class View extends Component {
 		    <div className="view overlay hm-white-slight">
 		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
 		        <a href="#">
-		            <div className="maskviewDetails"></div>
+		            <div className="mask viewDetails"></div>
 		        </a>
 		    </div>
 

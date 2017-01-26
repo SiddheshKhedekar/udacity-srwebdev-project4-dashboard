@@ -1,6 +1,6 @@
 // =============================================================
 // 
-//  restaurant_list.js
+// view_list.js
 //  
 // =============================================================
 
@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 
-import selectRestaurant from '../actions/select_restaurant'
+import selectView from '../actions/select_view'
 
 // imports lodash plugin
 import _ from 'lodash';
@@ -23,7 +23,7 @@ class View extends Component {
 
 		this.state = {
 			searchTerm:'',
-			currentlySelected: this.props.restaurants
+			currentlySelected: this.props.views
 		};
 		
 		// binds the search input
@@ -33,7 +33,7 @@ class View extends Component {
 	categoryFilterChange(event){
 
 		// creates filter
-		let categoryFilter = _.filter(this.props.restaurants, restaurant => restaurant.category.includes(event.target.value));
+		let categoryFilter = _.filter(this.props.views,view =>view.category.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -45,7 +45,7 @@ class View extends Component {
 	priceFilterChange(event){
 
 		// creates filter
-		let priceFilter = _.filter(this.props.restaurants, restaurant => restaurant.price.includes(event.target.value));
+		let priceFilter = _.filter(this.props.views,view =>view.price.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -57,7 +57,7 @@ class View extends Component {
 	ratingFilterChange(event){
 
 		// creates filter 
-		let ratingFilter = _.filter(this.props.restaurants, restaurant => restaurant.rating.includes(event.target.value));
+		let ratingFilter = _.filter(this.props.views,view =>view.rating.includes(event.target.value));
 
 		// sets the state based on filter
 		this.setState({
@@ -69,7 +69,7 @@ class View extends Component {
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.restaurants, restaurant => restaurant.title.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views,view =>view.title.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({
@@ -79,25 +79,25 @@ class View extends Component {
 		console.log(this.state.searchTerm);
 		console.log(this.state.currentlySelected);
 	}
-	// creates the function to apply the outro animation to the restaurant list when the restaurant details are expanded
+	// creates the function to apply the outro animation to theview list when theview details are expanded
 	listHide(){
 		
-		var restaurantList = document.querySelector('.restaurantList');
-		var restaurantDetails = document.querySelector('.restaurantDetails');
+		varviewList = document.querySelector('.viewList');
+		varviewDetails = document.querySelector('.viewDetails');
 
 		// handles animations when list is hiding
-		restaurantList.classList.add('fadeOutDown');
-		restaurantList.classList.remove('fadeInUp');
+		viewList.classList.add('fadeOutDown');
+		viewList.classList.remove('fadeInUp');
 
-		// handles restaurantHide classes
-		restaurantDetails.classList.remove('hidden');
-		restaurantDetails.classList.remove('heightHidden');
-		restaurantDetails.classList.remove('fadeOut');
-		restaurantDetails.classList.add('fadeInDown');
+		// handlesviewHide classes
+		viewDetails.classList.remove('hidden');
+		viewDetails.classList.remove('heightHidden');
+		viewDetails.classList.remove('fadeOut');
+		viewDetails.classList.add('fadeInDown');
 
 		// hides from the dom after animation is over
 		setTimeout(function(){
-			restaurantList.classList.add('hidden');
+			viewList.classList.add('hidden');
 		}, 1000);
 		
 	}
@@ -107,33 +107,33 @@ class View extends Component {
 	renderList() {
 
 		// creates the map of the books array, setting up an object for each index and calling it 'book'
-		// return this.props.restaurants.map((restaurant) => {
-		return this.state.currentlySelected.map((restaurant) => {
+		// return this.props.views.map((view) => {
+		return this.state.currentlySelected.map((view) => {
 			// returns our book properties within an li
 			// on this.props.selectBook, it passes the value of the book that was clicked (or in other words the individual book object)
 			// to the selectBook action reducer
-			const rating = parseInt(restaurant.rating);
+			const rating = parseInt(view.rating);
 			return (
-			<article className="restaurantCard card col-md-4"
-				key={restaurant.title} 
+			<article className="viewCard card col-md-4"
+				key={view.title} 
 			>
-			<div>{restaurant.image}</div>
+			<div>{view.image}</div>
 		    <div className="view overlay hm-white-slight">
 		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
 		        <a href="#">
-		            <div className="mask restaurantDetails"></div>
+		            <div className="maskviewDetails"></div>
 		        </a>
 		    </div>
 
 		    <div className="card-block">
-				<h4 className="card-title">{restaurant.title}
+				<h4 className="card-title">{view.title}
 				<br/>
-				<small> {restaurant.category}</small></h4>
-		        <p className="card-text">{restaurant.description}</p>
+				<small> {view.category}</small></h4>
+		        <p className="card-text">{view.description}</p>
 		        <div className="bottom">
-		        	<span className="restaurantPrice">${restaurant.price} <small>avarage</small></span>
-			        <a href="#" className="btn btn-primary restaurantOpen"
-					onClick={() => {this.props.selectRestaurant(restaurant); this.listHide();}}
+		        	<span className="viewPrice">${view.price} <small>avarage</small></span>
+			        <a href="#" className="btn btn-primaryviewOpen"
+					onClick={() => {this.props.selectView(view); this.listHide();}}
 			        >
 			        Learn More
 			        </a>
@@ -150,9 +150,9 @@ class View extends Component {
 
 		//DONT FORGET TO RETURN HERE, JUST SPENT AN HOUR DEBUGGING THIS AREA
 		return (
-			<section className="restaurantList animated fadeInUp col-md-12">
+			<section className="viewList animated fadeInUp col-md-12">
 				<div className="col-md-12 intro card">
-		            <h3 className="h3-responsive">Select a restaurant to get started</h3>
+		            <h3 className="h3-responsive">Select aview to get started</h3>
 		            <div className="search-bar md-form col-md-12">
 						<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
 						<input 
@@ -162,7 +162,7 @@ class View extends Component {
 							value={this.state.searchTerm}
 							onChange={event => this.searchInputChange(event)}
 							autofocus
-							placeholder="Filter restaurants by title"
+							placeholder="Filter views by title"
 						 />
 					 </div>
 					<div className="form-group col-md-12">
@@ -227,9 +227,9 @@ function mapStateToProps(state) {
 	// this defines the state of this component
 	return {
 		// this is the KEY or what we want to call what is attached to this component's .props
-		restaurants: 
+		views: 
 		// this is the actual DATA of the KEY books within reducers.js, which contains the JSON
-		state.restaurants
+		state.views
 
 	};
 
@@ -245,10 +245,10 @@ function mapDispatchToProps(dispatch) {
 
 		// this is the KEY the function selectBook is bound to
 		// thanks to this key, the property from the action creator gets passed on to this.book
-		selectRestaurant: 
+		selectView: 
 
 		// this is the actual selectBook function
-		selectRestaurant },
+		selectView },
 
 		// this is the argument
 		// 

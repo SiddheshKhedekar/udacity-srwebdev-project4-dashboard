@@ -15,7 +15,7 @@ import React, { Component } from 'react';
 import Map from '../containers/map/map';
 
 // create the JS to hold the book data
-function restaurantReducer() {
+function viewReducer() {
 	
 	// returns an array with our data
 	return [
@@ -51,4 +51,4 @@ function restaurantReducer() {
 	];
 };
 
-export default restaurantReducer;
+export default viewReducer;

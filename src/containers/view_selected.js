@@ -1,6 +1,6 @@
 // =============================================================
 // 
-// 	restaurant_detail.js
+// 	view_detail.js
 //
 // =============================================================
 
@@ -18,24 +18,24 @@ import Map from './map/map';
 
 class ViewSelected extends Component {
 
-	// creates the function to apply the outro animation to the restaurant list when the restaurant details are expanded
+	// creates the function to apply the outro animation to the view list when the view details are expanded
 	viewHide(){
 
-		var restaurantDetails = document.querySelector('.restaurantDetails');
-		var restaurantList = document.querySelector('.restaurantList');
+		var viewDetails = document.querySelector('.viewDetails');
+		var viewList = document.querySelector('.viewList');
 		var postReview = document.querySelector('#postReview');
 		var reviewPost = document.querySelector('#reviewPost');
-		restaurantDetails.classList.remove('fadeInDown');
-		restaurantDetails.classList.add('fadeOut');
-		restaurantDetails.classList.add('heightHidden');
+		viewDetails.classList.remove('fadeInDown');
+		viewDetails.classList.add('fadeOut');
+		viewDetails.classList.add('heightHidden');
 		setTimeout(function(){
-			restaurantDetails.classList.add('hidden');
+			viewDetails.classList.add('hidden');
 		}, 1000);
 		
-		// handles views for the restaurant list
-		restaurantList.classList.remove('fadeOutDown');
-		restaurantList.classList.remove('hidden');
-		restaurantList.classList.add('fadeInUp');
+		// handles views for the view list
+		viewList.classList.remove('fadeOutDown');
+		viewList.classList.remove('hidden');
+		viewList.classList.add('fadeInUp');
 		
 		// handles views for the postReview
 		postReview.classList.add('hidden');
@@ -47,7 +47,7 @@ class ViewSelected extends Component {
 	}
 	render(){
 
-		if (!this.props.restaurant){
+		if (!this.props.view){
 			return (
 			
 				<div></div>
@@ -55,9 +55,9 @@ class ViewSelected extends Component {
 			);
 		}
 		
-		const rating = parseInt(this.props.restaurant.rating);
+		const rating = parseInt(this.props.view.rating);
 		return (
-		<div className="col-md-12 restaurantDetails animated fadeInDown">
+		<div className="col-md-12 viewDetails animated fadeInDown">
 			
 			<article className="card">
 
@@ -65,21 +65,21 @@ class ViewSelected extends Component {
 
 			    <div className="card-block">
 
-			        <div className="col-md-12 restaurantTitle">
+			        <div className="col-md-12 viewTitle">
 
-                		<h1 className="h1-responsive">{this.props.restaurant.title} 
-                    		<small className="text-muted"> {this.props.restaurant.category}</small>
+                		<h1 className="h1-responsive">{this.props.view.title} 
+                    		<small className="text-muted"> {this.props.view.category}</small>
                 		</h1>
 
             		</div>
 
             		<div className="detailContainer">
-						{this.props.restaurant.image}
+						{this.props.view.image}
 
 						<div className="starRating">
 						</div>
 
-						<div className="restaurantDescription"> {this.props.restaurant.ldescription} </div>
+						<div className="viewDescription"> {this.props.view.ldescription} </div>
 						<div className="reviewContainer"> 
 							<h2>Reviews</h2>
 							<div id="postReview" className="hidden animated">
@@ -87,15 +87,15 @@ class ViewSelected extends Component {
 						</div>
 						<div className="detailBottom first">
 
-							<span className="restaurantHours">Hours of operation: <small>{this.props.restaurant.hours}</small></span>
+							<span className="viewHours">Hours of operation: <small>{this.props.view.hours}</small></span>
 
-							<span className="restaurantAddress">Address: <small>{this.props.restaurant.address}</small></span>
+							<span className="viewAddress">Address: <small>{this.props.view.address}</small></span>
 
 						</div>
 
 						<div className="detailBottom">
 
-							<span className="restaurantPrice">${this.props.restaurant.price} <small>avarage</small></span>
+							<span className="viewPrice">${this.props.view.price} <small>avarage</small></span>
 
 						    <button className="btn btn-primary" onClick={() => this.viewHide()}>Return to selection</button>
 
@@ -121,7 +121,7 @@ function mapStateToProps(state){
 	// again, whatever we return from here is usable by the BookDetails class, under props
 	return {
 		
-		restaurant: state.activeRestaurant
+		view: state.activeView
 
 	};
 

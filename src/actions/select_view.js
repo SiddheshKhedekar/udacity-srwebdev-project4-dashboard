@@ -9,7 +9,7 @@
 
 // note, action creator functions within react must contain objects within their scope, otherwise it returns an error
 // book is passed from book_list.js thanks to the connect function
-function selectRestaurant(restaurant){
+function viewRestaurant(restaurant){
 
 	// selectBook is an ActionCreator it needs to return an action, an object with a type property
 	// each action usually contains a type, and a payload.
@@ -24,9 +24,9 @@ function selectRestaurant(restaurant){
 		// in this case it would be a single book object from the books json
 		// this is an optional key value, not required by redux. anything else can be passed in an action along with the type.
 		// the PAYLOAD key is created for convinience, so we can pass its value to other components
-		payload: restaurant
+		payload: view
 	};
 };
 
 // this needs to be attached over to book_list.js and the rest of the app, so we export
-export default selectRestaurant;
+export default viewRestaurant;

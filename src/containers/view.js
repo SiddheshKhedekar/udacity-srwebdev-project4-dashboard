@@ -69,7 +69,7 @@ class View extends Component {
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.views, view => view.title.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({

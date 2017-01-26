@@ -59,10 +59,18 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1;
+    top: 0;
 }
 .btn {
     background-color: #c3362b !important;
-   }
+}
+.viewList {
+    margin-top: 4rem;
+}
+
+.viewDetails .card {
+    margin-top: 6rem;
+}
 
 /*===========================================================
 
@@ -231,6 +239,18 @@ body {
 h3.h3-responsive {
     margin: 1rem 0;
 }
-.viewList {
-    margin-top: 4rem;
+
+/*===========================================================
+
+    Widget Component Styles
+
+===========================================================*/
+
+.widgetTitle h2 {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 3rem 0;
+}
+.card-block {
+    padding-top: 0 !important;
 }

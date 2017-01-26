@@ -57,14 +57,13 @@ class ViewSelected extends Component {
 
 
 			    <div className="card-block">
-			    						<div className="reviewContainer"> 
-							<h2>Widget Details</h2>
-							<div id="postReview" className="hidden animated">
-							{this.props.view.details}
-							</div>
+			    	<div className="widgetTitle"> 
+						<h2>{this.props.view.name}</h2>
+						<div id="componentDetails" className="animated">
 						</div>
+					</div>
 
-            		<div className="detailContainer">
+            		<div className="componentContainer">
 						{this.props.view.component}
 
 						

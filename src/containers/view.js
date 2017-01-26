@@ -129,22 +129,17 @@ class View extends Component {
 				<div className="col-md-12 intro card">
 		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">
+						<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
+						<input 
+							id="searchBar"
+							className="form-control"
+							type="text"
+							value={this.state.searchTerm}
+							onChange={event => this.searchInputChange(event)}
+							autofocus
+							placeholder="Filter restaurants by title"
+						 />
 					 </div>
-					<div className="form-group col-md-12">
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
-							<select 
-								id="categoryFilter"
-								className="form-control"
-								onChange={event => this.categoryFilterChange(event)}
-							>
-								<option value="0">Select a Dashboard Widget</option>
-								<option value="1">Employee Map</option>
-								<option value="2">Recent Issues</option>
-								<option value="3">Issue Charts</option>
-							</select>
-						</div>
-					</div>
 				</div>
 				{this.renderList()}
 			</section>

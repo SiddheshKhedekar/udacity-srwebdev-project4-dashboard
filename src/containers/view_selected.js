@@ -4,14 +4,9 @@
 //
 // =============================================================
 
-// since the book detail (meaning the area that displays the ACTIVE BOOK) makes use of this app's reducers, this is created as a 
-// CONTAINER not a component
-
-
-
 import React, { Component } from 'react';
 
-// since this component is a container, the connect function must be included
+
 import { connect } from 'react-redux';
 
 import Map from './map/map';

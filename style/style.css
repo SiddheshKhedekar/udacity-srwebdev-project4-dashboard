@@ -55,7 +55,11 @@ main.container {
 .navbar {
     background: #2c3982 !important;
 }
-
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
 .btn {
     background-color: #c3362b !important;
    }
@@ -73,7 +77,7 @@ main.container {
   font-weight: 200;
   background-color: #2e353d;
   position: fixed;
-  top: 0px;
+  top: 1px;
   width: 300px;
   height: 100%;
   color: #e1ffff;
@@ -83,6 +87,7 @@ main.container {
   line-height: 50px;
   display: block;
   text-align: center;
+  padding-top: 64px;
   font-size: 14px;
 }
 .nav-side-menu .toggle-btn {
@@ -220,9 +225,12 @@ body {
 ===========================================================*/
 
 .intro {
-    margin: 1rem 0;
+    margin: 3rem 0;
     text-align: center;
 }
 h3.h3-responsive {
     margin: 1rem 0;
+}
+.viewList {
+    margin-top: 4rem;
 }

@@ -1,5 +1,17 @@
 ** Changelog for Dashoard
 
+v0.7
+- cleaned up individual components
+- fixed map individual component
+- hid individual table component for now
+- installed chart component
+- Enhanced view render logic, enabled changing of state from nav
+
+v0.6
+- cleaned up semenatics
+- cleaned up nav / header styling
+- cleaned up view component and view general styles
+
 v0.5
 - revised DevOps to allow view selection from nav
 - refactored listHide to be usable accross multiple components

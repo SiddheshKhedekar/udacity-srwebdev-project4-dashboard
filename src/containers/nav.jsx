@@ -15,7 +15,7 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
-import listHide from './render_functions.js'
+import listHide from '../components/render_functions.js'
 
 class Nav extends Component {
 	constructor(props){
@@ -43,9 +43,20 @@ class Nav extends Component {
   	}
   	renderViewLinks(){
   	return this.state.currentlySelected.map((view) => {
+  		var iconClass;
+  		if (view.id === "3"){
+  			var iconClass = "fa fa-users fa-lg"
+  		}
+  		else {
+  			var iconClass = "fa fa-globe fa-lg"
+  		}
   		return (
 			<div className="viewLink" key={view.name}>
-				<button onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>{view.name}</button>
+						    <li className={view.name} onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
+			                  <a href="#">
+			                  <i className={iconClass}></i> {view.name}
+			                  </a>
+			                </li>
 			</div>
 			);
 		});
@@ -61,7 +72,7 @@ class Nav extends Component {
 		    <div className="container nav-container">
 
 		        <div className="navbar-toggleable-xs" id="collapseEx2">
-		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.5</h1>
+		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.7</h1>
 		        </div>
 
 		    </div>
@@ -72,66 +83,13 @@ class Nav extends Component {
 
 
 			<div className="nav-side-menu">
-			    <div className="brand">Brand Logo</div>
+			    <h3 className="brand">Dashboard Widgets</h3>
 			    <i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 			  
 			        <div className="menu-list">
 			  
 			            <ul id="menu-content" className="menu-content collapse out">
-			                <li>
-			                  <a href="#" >
-			                  <i className="fa fa-dashboard fa-lg"></i> Dashboard
-			                  </a>
-			                </li>
-							
-			                <li  data-toggle="collapse" data-target="#products" className="collapsed active">
-			                  <a href="#"><i className="fa fa-gift fa-lg"></i>{this.renderViewLinks()}</a>
-			                </li>
-			                <ul className="sub-menu collapse" id="products">
-			                    <li className="active"><a href="#">CSS3 Animation</a></li>
-			                    <li><a href="#">General</a></li>
-			                    <li><a href="#">Buttons</a></li>
-			                    <li><a href="#">Tabs & Accordions</a></li>
-			                    <li><a href="#">Typography</a></li>
-			                    <li><a href="#">FontAwesome</a></li>
-			                    <li><a href="#">Slider</a></li>
-			                    <li><a href="#">Panels</a></li>
-			                    <li><a href="#">Widgets</a></li>
-			                    <li><a href="#">Bootstrap Model</a></li>
-			                </ul>
-
-
-			                <li data-toggle="collapse" data-target="#service" className="collapsed">
-			                  <a href="#"><i className="fa fa-globe fa-lg"></i> Services <span className="arrow"></span></a>
-			                </li>  
-			                <ul className="sub-menu collapse" id="service">
-			                  <li>New Service 1</li>
-			                  <li>New Service 2</li>
-			                  <li>New Service 3</li>
-			                </ul>
-
-
-			                <li data-toggle="collapse" data-target="#new" className="collapsed">
-			                  <a href="#"><i className="fa fa-car fa-lg"></i> New <span className="arrow"></span></a>
-			                </li>
-			                <ul className="sub-menu collapse" id="new">
-			                  <li>New New 1</li>
-			                  <li>New New 2</li>
-			                  <li>New New 3</li>
-			                </ul>
-
-
-			                 <li>
-			                  <a href="#">
-			                  <i className="fa fa-user fa-lg"></i> Profile
-			                  </a>
-			                  </li>
-
-			                 <li>
-			                  <a href="#">
-			                  <i className="fa fa-users fa-lg"></i> Users
-			                  </a>
-			                </li>
+							{this.renderViewLinks()}
 			            </ul>
 			     </div>
 			</div>
@@ -141,7 +99,7 @@ class Nav extends Component {
   }
 }
 // exactly how it sounds, it maps the state into the props method
-// whatever returns, will show up as this.props inside of BookList
+// whatever returns, will show up as this.props inside of Class
 // this is a built in function of React
 function mapStateToProps(state) {
 

@@ -18,7 +18,7 @@ export default function listHide(containerHidden, containerShow){
 
 		// handlesviewHide classes
 		show.classList.remove('hidden');
-		show.classList.remove('heightHidden');
+		show.classList.remove('hidden');
 		show.classList.remove('fadeOut');
 		show.classList.add('fadeInDown');
 

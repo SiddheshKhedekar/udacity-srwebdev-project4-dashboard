@@ -38,7 +38,7 @@ var dataSet = [
 ];
  
 $(document).ready(function() {
-    $('#example').DataTable( {
+    $('#tableShrunk').DataTable( {
         data: dataSet,
         columns: [
             { title: "Employee Name" },
@@ -53,3 +53,20 @@ $(document).ready(function() {
         ]
     } );
 } );
+$(document).ready(function() {
+    $('#tableMain').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "Employee Name" },
+            { title: "Employee Position" },
+            { title: "Employee Location" },
+            { title: "Customer Name" },
+            { title: "Submission Timestamp" },
+            { title: "Issue Value" },
+            { title: "Description" },
+            { title: "Open / Close Status" },
+            { title: "Closed Timestamp" }
+        ]
+    } );
+} );
+

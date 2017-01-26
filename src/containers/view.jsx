@@ -42,8 +42,6 @@ class View extends Component {
 			searchTerm: event.target.value,
 			currentlySelected: searchFilter
 		});
-		console.log(this.state.searchTerm);
-		console.log(this.state.currentlySelected);
 	}
 	// handles the category select setting of state
 	categoryFilterChange(event){
@@ -60,7 +58,6 @@ class View extends Component {
 		this.setState({
 			currentlySelected: categoryFilter
 		});
-		console.log(this.state.currentlySelected);
 	}
 
 	renderList() {
@@ -68,31 +65,22 @@ class View extends Component {
 		return this.state.currentlySelected.map((view) => {
 
 			return (
-			<article className="viewCard card col-md-4"
+			<article id={view.name} className="viewCard card col-md-12"
 				key={view.name} 
 			>
-			<div>{view.component}</div>
-		    <div className="view overlay hm-white-slight">
-		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
-		        <a href="#">
-		            <div className="mask viewDetails"></div>
-		        </a>
-		    </div>
+			<div className={view.name}>{view.component}</div>
 
 		    <div className="card-block">
 				<h4 className="card-title">
 				<br/>
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
-		        <div className="bottom">
-		        	<span className="viewPrice"><small>avarage</small></span>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
+					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>
 		        </div>
-		    </div>
 			</article>
 			);
 		});
@@ -108,7 +96,6 @@ class View extends Component {
 				<div className="col-md-12 intro card">
 		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">
-						<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
 						<input 
 							id="searchBar"
 							className="form-control"
@@ -116,9 +103,10 @@ class View extends Component {
 							value={this.state.searchTerm}
 							onChange={event => this.searchInputChange(event)}
 							autofocus
-							placeholder="Filter restaurants by title"
+							placeholder="Filter Widgets by title"
 						 />
 					 </div>
+					 <div className="viewDetails"></div>
 				</div>
 				{this.renderList()}
 			</section>

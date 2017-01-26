@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 // custom components
-import Nav from './nav';
+import Nav from '../containers/nav';
 import Footer from './footer';
 import View from '../containers/view';
 import ViewSelected from '../containers/view_selected';

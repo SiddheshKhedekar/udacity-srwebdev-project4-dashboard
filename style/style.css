@@ -11,15 +11,15 @@
 ===========================================================*/
 
 html {
-  height: 100%;
+  height: 100% !important;
 }
 body {
   position: relative;
   padding-bottom: 6rem;
   min-height: 100%;
-  max-height: auto;
+  max-height: auto !important;
   margin: 0.5px !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 footer {
     padding-top: 0 !important;
@@ -45,6 +45,7 @@ nav {
 
 main.container {
     max-height: 100%;
+    padding-bottom: 3rem;
 }
 .hidden {
   display: none !important;
@@ -55,11 +56,27 @@ main.container {
 .navbar {
     background: #2c3982 !important;
 }
-
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
 .btn {
     background-color: #c3362b !important;
-   }
+}
+.viewList {
+    margin-top: 4rem;
+}
 
+.viewDetails .card {
+    margin-top: 6rem;
+}
+#application {
+    display: inline-block;
+    width: 100%;
+    height: auto !Important;
+}
 /*===========================================================
 
     Sidemenu Component Styles
@@ -68,21 +85,22 @@ main.container {
 
 .nav-side-menu {
   overflow: auto;
-  font-family: verdana;
+  font-family: Roboto, sans-serif;
   font-size: 12px;
-  font-weight: 200;
-  background-color: #2e353d;
+  font-weight: 400;
+  background-color: #2c3982;
   position: fixed;
-  top: 0px;
+  top: 1px;
   width: 300px;
   height: 100%;
   color: #e1ffff;
 }
 .nav-side-menu .brand {
-  background-color: #23282e;
+  background-color: #2c3982;
   line-height: 50px;
   display: block;
   text-align: center;
+  padding-top: 64px;
   font-size: 14px;
 }
 .nav-side-menu .toggle-btn {
@@ -155,8 +173,7 @@ main.container {
 }
 .nav-side-menu li {
   padding-left: 0px;
-  border-left: 3px solid #2e353d;
-  border-bottom: 1px solid #23282e;
+  background-color: #242e67;
 }
 .nav-side-menu li a {
   text-decoration: none;
@@ -164,8 +181,9 @@ main.container {
 }
 .nav-side-menu li a i {
   padding-left: 10px;
-  width: 20px;
+  width: 20%;
   padding-right: 20px;
+  font-size: 2em !important;
 }
 .nav-side-menu li:hover {
   border-left: 3px solid #d19b3d;
@@ -209,6 +227,7 @@ main.container {
 }
 body {
   margin: 0px;
+  height: auto;
   padding: 0px;
 }
 
@@ -220,9 +239,98 @@ body {
 ===========================================================*/
 
 .intro {
-    margin: 1rem 0;
+    margin: 3rem 0;
     text-align: center;
 }
 h3.h3-responsive {
     margin: 1rem 0;
+}
+
+/*===========================================================
+
+    Widget Component Styles
+
+===========================================================*/
+
+.widgetTitle h2 {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 1rem 0;
+}
+.card-block {
+    padding-top: 0 !important;
+}
+.viewCard {
+    margin: 3rem 0;
+    padding: 2rem;
+}
+li.table {
+    display: none !Important;
+}
+/*===========================================================
+
+   Map Widget Component Styles
+
+===========================================================*/
+.datamap-outer-conainer svg {
+    min-height: 600px;
+}
+.mapDescription {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/*===========================================================
+
+   Table Widget Component Styles
+
+===========================================================*/
+article#table .btn {
+    display: none;
+}
+#table #tableShrunk_wrapper {
+    padding: 2rem;
+}
+
+/*===========================================================
+
+   Nav Widget Component Styles
+
+===========================================================*/
+.viewLink li a span {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+h3.brand {
+    font-size: 20px !important;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+}
+/*===========================================================
+
+   Chart Widget Component Styles
+
+===========================================================*/
+.chart .card {
+    margin: 2%;
+    width: 46%;
+    float: left;
+    padding: 2%;
+    text-align: center;
+}
+
+#pyc {
+    background-color: #05b54e;
+    color: #fff;
+}
+
+#ri {
+    background-color: #2c3982;
+    color: #fff;
+}
+polyline {
+    fill-opacity: 1 !important;
+}
+h4.card-title {
+    text-transform: capitalize;
 }

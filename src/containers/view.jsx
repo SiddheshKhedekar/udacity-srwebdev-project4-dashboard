@@ -71,7 +71,7 @@ class View extends Component {
 			<article className="viewCard card col-md-12"
 				key={view.name} 
 			>
-			<div>{view.component}</div>
+			<div className={view.name}>{view.component}</div>
 
 		    <div className="card-block">
 				<h4 className="card-title">

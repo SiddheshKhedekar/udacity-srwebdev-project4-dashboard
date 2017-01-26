@@ -45,7 +45,7 @@ class Nav extends Component {
   	return this.state.currentlySelected.map((view) => {
   		return (
 			<div className="viewLink" key={view.name}>
-						    <li onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
+						    <li className={view.name} onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
 			                  <a href="#">
 			                  <i className="fa fa-dashboard fa-lg"></i> {view.name}
 			                  </a>

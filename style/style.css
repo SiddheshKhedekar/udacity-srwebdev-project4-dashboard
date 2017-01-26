@@ -17,9 +17,9 @@ body {
   position: relative;
   padding-bottom: 6rem;
   min-height: 100%;
-  max-height: auto;
+  max-height: auto !important;
   margin: 0.5px !important;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 footer {
     padding-top: 0 !important;
@@ -71,7 +71,10 @@ header {
 .viewDetails .card {
     margin-top: 6rem;
 }
-
+#application {
+    display: inline-block;
+    width: 100%;
+}
 /*===========================================================
 
     Sidemenu Component Styles

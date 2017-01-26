@@ -25,16 +25,16 @@ class Charts extends Component {
 		
 	}
 	i(){
-		console.log(this.charts);
+		console.log(this.props.charts);
 	}
 	renderCharts(chartData){
 
 		// sets up the variable to map each pressure array and generate our chart 
 		const numbers = chartData.data.map(chartNumbers => chartNumbers.data);
-		
+		console.log(numbers);
 		const lineChartID = "1";		
-		let lineChartData = _.filter(chartData, data => data.name.includes(lineChartID));
-		var lineChartNumbers = lineChartData.data.map(chartNumbers => chartNumbers.data);
+		let lineChartData = _.filter(chartData, name => name.includes(lineChartID));
+		var lineChartNumbers = lineChartData.map(thisChartData => thisChartData.data);
 
 		const barChartID = "2";		
 		let barChartData = _.filter(chartData.data, data => data.name.includes(barChartID));
@@ -69,7 +69,7 @@ class Charts extends Component {
 	console.log(this.state.charts);
 		return(
 			<div>
-			<button onClick={() => (this.i())}>TEST</button>
+			{this.props.charts.map(chartData => this.renderCharts(chartData))}
 		</div>
 			
 

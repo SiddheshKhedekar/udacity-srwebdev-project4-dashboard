@@ -52,7 +52,7 @@ var dataSet = [
   ["Unity Butler","Marketing Designer","San Francisco","Angelica Ramos","2009-12-09","$85,675","Lorem ipsum dolor sit amet….","closed","2011-12-12"  ],
   ["Yuri Berry","Chief Marketing Officer (CMO)","New York","Airi Satou","2009-06-25","$675,000","Lorem ipsum dolor sit amet….","closed","2011-06-07"  ]
 ];
- /*
+ 
 $(document).ready(function() {
     $('#tableShrunk').DataTable( {
         data: dataSet,
@@ -68,7 +68,7 @@ $(document).ready(function() {
             { title: "Closed Timestamp" }
         ]
     } );
-} );*/
+} );
 /*
 $(document).ready(function() {
     $('#tableMain').DataTable( {
@@ -92,8 +92,12 @@ $(document).ready(function() {
 export default class Table extends Component {
   render() {
     return (
-        <div className="">
-			<table id="tableShrunk" className="display secondaryWidget" width="100%"></table>
+        <div>
+			  <table id="tableShrunk" className="display secondaryWidget" width="100%"></table>
+        <div id="mobileHandle">
+          <h4>Switch to a Desktop Device to load the table filter data API</h4>
+          <img src="../../img/data-filter-mobile.jpg" alt="mobile data filter image"/>
+        </div>
         </div>
     );
   }

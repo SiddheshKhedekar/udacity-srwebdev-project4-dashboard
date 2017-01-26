@@ -12,20 +12,10 @@ import React, { Component } from 'react';
 // since this component is a container, the connect function must be included
 import { connect } from 'react-redux';
 
-// imports star rating component
-import StarRatingWidget from '../components/star_rating_component';
-
-// imports review component
-import Reviews from '../components/reviews';
-
-// imports post container
-import PostReview from './restaurant_post_review';
-
-
-class RestaurantDetail extends Component {
+class ViewSelected extends Component {
 
 	// creates the function to apply the outro animation to the restaurant list when the restaurant details are expanded
-	restaurantHide(){
+	viewHide(){
 
 		var restaurantDetails = document.querySelector('.restaurantDetails');
 		var restaurantList = document.querySelector('.restaurantList');
@@ -50,23 +40,6 @@ class RestaurantDetail extends Component {
 		// handles views for the reviewPost
 		reviewPost.classList.add('hidden');
 		reviewPost.classList.remove('fadeInUp');
-	}
-
-	renderComments(){
-		return this.props.restaurant.reviews.map((reviews) => {
-		const rating = parseInt(reviews.rating);			
-			return (
-			<section className="col-md-12" key={reviews.name}>
-				<Reviews image={reviews.image} name={reviews.name} date={reviews.date} rating={rating} comment={reviews.comments} />
-			</section>
-			);
-		})
-	}
-	postReview(event){
-		event.preventDefault();
-		var postReview = document.querySelector('#postReview');
-		postReview.classList.remove('hidden');
-		postReview.classList.add('fadeInUp');
 	}
 	render(){
 
@@ -124,7 +97,7 @@ class RestaurantDetail extends Component {
 
 							<span className="restaurantPrice">${this.props.restaurant.price} <small>avarage</small></span>
 
-						    <button className="btn btn-primary" onClick={() => this.restaurantHide()}>Return to selection</button>
+						    <button className="btn btn-primary" onClick={() => this.viewHide()}>Return to selection</button>
 
 						    <button className="btn btn-primary" onClick={event => this.postReview(event)}>Post a Review</button>
 
@@ -155,4 +128,4 @@ function mapStateToProps(state){
 }
 
 // connects the activeBook reducer to this component, making it a container by definition
-export default connect (mapStateToProps) (RestaurantDetail);
+export default connect (mapStateToProps) (ViewSelected);

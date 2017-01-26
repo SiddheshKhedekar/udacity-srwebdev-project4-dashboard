@@ -82,7 +82,7 @@ header {
 
 .btn {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem !important;
     background-color: #2c3982 !important;
     margin: 0 !important;
 }
@@ -303,6 +303,7 @@ li.table {
 .card h4 {
     text-align: center;
 }
+
 /*===========================================================
 
    Map Widget Component Styles
@@ -393,6 +394,7 @@ section#viewDetails {
 
 article#geomap {
     padding: 0;
+    padding-top: 1rem;
 }
 .col-md-6.card {
     width: 99%;
@@ -403,4 +405,5 @@ article#geomap {
     margin-bottom: 6rem;
     padding-bottom: 0;
 }
+.detailCard {margin: 6rem 5% 0;width: 90% !important;}
 }

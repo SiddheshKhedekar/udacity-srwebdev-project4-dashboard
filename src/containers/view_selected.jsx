@@ -51,56 +51,36 @@ class ViewSelected extends Component {
 		}
 		
 		return (
-		<div className="col-md-12 viewDetails animated fadeInDown">
+		<div className="col-md-12 viewDetails animated fadeInUp">
 			
 			<article className="card">
 
-			    <img className="img-fluid" src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap" />
 
 			    <div className="card-block">
-
-			        <div className="col-md-12 viewTitle">
-
-                		<h1 className="h1-responsive">{this.props.view.name} 
-                		</h1>
-
-            		</div>
+			    						<div className="reviewContainer"> 
+							<h2>Widget Details</h2>
+							<div id="postReview" className="hidden animated">
+							{this.props.view.details}
+							</div>
+						</div>
 
             		<div className="detailContainer">
 						{this.props.view.component}
 
-						<div className="starRating">
+						
 						</div>
-						<div className="reviewContainer"> 
-							<h2>Reviews</h2>
-							<div id="postReview" className="hidden animated">
-							</div>
-						</div>
-						<div className="detailBottom first">
+						
 
-							<span className="viewHours">Hours of operation: <small></small></span>
-
-							<span className="viewAddress">Address: <small>{this.props.view.details}</small></span>
-
-						</div>
-
-						<div className="detailBottom">
-
-							<span className="viewPrice"><small>avarage</small></span>
 
 						    <button className="btn btn-primary" onClick={() => this.viewHide()}>Return to selection</button>
 
 
-
-						</div>
-
 					</div>
 
-			    </div>
+			    
 
 			</article>
-
-		</div>
+			</div>
 		);
 	}
 	

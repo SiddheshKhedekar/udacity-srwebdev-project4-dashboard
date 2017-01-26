@@ -1,7 +1,7 @@
 ** Changelog for Dashoard
 
 v0.6
-- prototype to clean up semantics
+- cleaned up semenatics
 - prototype to clean up DOM layout / styling
 
 v0.5

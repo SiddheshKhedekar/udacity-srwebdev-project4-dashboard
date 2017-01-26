@@ -72,27 +72,18 @@ class View extends Component {
 				key={view.name} 
 			>
 			<div>{view.component}</div>
-		    <div className="view overlay hm-white-slight">
-		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
-		        <a href="#">
-		            <div className="mask viewDetails"></div>
-		        </a>
-		    </div>
 
 		    <div className="card-block">
 				<h4 className="card-title">
 				<br/>
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
-		        <div className="bottom">
-		        	<span className="viewPrice"><small>avarage</small></span>
 			        <a href="#" className="btn btn-primaryviewOpen"
 					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>
 		        </div>
-		    </div>
 			</article>
 			);
 		});

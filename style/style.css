@@ -75,7 +75,7 @@ header {
   font-family: verdana;
   font-size: 12px;
   font-weight: 200;
-  background-color: #2e353d;
+  background-color: #2c3982;
   position: fixed;
   top: 1px;
   width: 300px;
@@ -83,7 +83,7 @@ header {
   color: #e1ffff;
 }
 .nav-side-menu .brand {
-  background-color: #23282e;
+  background-color: #2c3982;
   line-height: 50px;
   display: block;
   text-align: center;

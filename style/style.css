@@ -423,5 +423,5 @@ i.fa.fa-bars.fa-2x.toggle-btn {
 .navbar {
     display: none !important;
 }
-.detailCard {margin: 6rem 5% 0;width: 90% !important;}
+.detailCard {margin: 6rem 5% 6rem;width: 90% !important;padding: 0 !important;}
 }

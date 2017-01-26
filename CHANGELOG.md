@@ -1,8 +1,16 @@
 ** Changelog for Dashoard
 
+v0.7
+- prototype to clean up individual components
+- prototype to fix map individual component
+- prototype to fix table individual component
+- prototype to install chart component
+- prototype to enhance list logic
+
 v0.6
 - cleaned up semenatics
-- prototype to clean up DOM layout / styling
+- cleaned up nav / header styling
+- cleaned up view component and view general styles
 
 v0.5
 - revised DevOps to allow view selection from nav

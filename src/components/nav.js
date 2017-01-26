@@ -16,7 +16,7 @@ export default class Nav extends Component {
 		    <div className="container nav-container">
 
 		        <div className="navbar-toggleable-xs" id="collapseEx2">
-		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.4</h1>
+		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.5</h1>
 		        </div>
 
 		    </div>

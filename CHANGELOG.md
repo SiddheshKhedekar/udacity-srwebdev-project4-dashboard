@@ -1,5 +1,11 @@
 ** Changelog for Dashoard
 
+v0.5
+- prototype to style DOM to dashboard widgets as intended
+- prototype continue revising DOM element semantics
+- prototype to work devOps on sidebar to open individual views
+- prototype to start responsive development
+
 v0.4
 - refactored data so only 3 reviews remain
 - set up actions / reducers / containers to properly display content

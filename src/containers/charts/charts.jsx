@@ -40,10 +40,10 @@ class Charts extends Component {
 				return (
 					<div className="chartContainer second animated fadeInUp">
 						<div className="card-block">
-				        	<h4 className="card-title">Forecast for {name}</h4>
+				        	<h4 className="card-title">{name}</h4>
 				   		</div>
 						<div className="chartContainer second animated fadeInUp">
-							<ChartSpots chartData={data} color="#2c3982" units="%"/>
+							<ChartSpots chartData={data} color="#2c3982"/>
 						</div>
 					</div>
 					);
@@ -53,9 +53,9 @@ class Charts extends Component {
 					<div>
 						<div className="chartContainer second animated fadeInUp">
 						<div className="card-block">
-				        	<h4 className="card-title">Forecast for {name}</h4>
+				        	<h4 className="card-title">{name}</h4>
 				   		</div>
-							<ChartBars chartData={data} color="#05b54e" units="%"/>
+							<ChartBars chartData={data} color="#05b54e"/>
 						</div>
 					</div>
 					);

@@ -324,7 +324,13 @@ h3.brand {
     color: #fff;
 }
 
-div#ri {
+#ri {
     background-color: #2c3982;
     color: #fff;
+}
+polyline {
+    fill-opacity: 1 !important;
+}
+h4.card-title {
+    text-transform: capitalize;
 }

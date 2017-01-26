@@ -22,15 +22,16 @@ function avarage(data) {
 
 // trying to use an ES6 function here
 export default (props) => {
+	const color = props.color;
 	return (
+		
 		<div>
 		<div>
 			<Sparklines className="chartActual" height={120} width={180} data={props.chartData}>
-				<SparklinesSpots />
-				<SparklinesLine style={{ fill: "none" }} color={props.color} />
+				<SparklinesLine style={{ fill:color }} color={color} />
 			</Sparklines>
 		</div>
-			<div><h5 className="chartDescription animated fadeIn">Pressure: {avarage(props.chartData)} {props.units}</h5></div>
+			<div><h5 className="chartDescription animated fadeIn">Over Time</h5></div>
 		</div>
 		
 	);

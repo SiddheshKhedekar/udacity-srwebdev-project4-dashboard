@@ -72,7 +72,7 @@ class View extends Component {
 		return this.state.currentlySelected.map((view) => {
 
 			return (
-			<article className="viewCard card col-md-4"
+			<article className="viewCard card col-md-12"
 				key={view.name} 
 			>
 			<div>{view.component}</div>

@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import ChartLines from './components/chart_lines';
 import ChartBars from './components/chart_bars';
 import ChartSpots from './components/chart_spots';
 

@@ -41,7 +41,7 @@ class ViewSelected extends Component {
 		}
 		
 		return (
-		<div id="viewDetails" className="col-md-12 viewDetails detailCard animated card">
+		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeIn animated card">
 			
 			<section className="">
 

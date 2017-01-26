@@ -41,6 +41,9 @@ class Nav extends Component {
   	selectChildView(view){
 		return this.props.selectView(view);
   	}
+  	renderClear(){
+  		var clean = document.querySelector('.viewDeatils');
+  	}
   	renderViewLinks(){
   	return this.state.currentlySelected.map((view) => {
   		var iconClass;
@@ -52,7 +55,7 @@ class Nav extends Component {
   		}
   		return (
 			<div className="viewLink" key={view.name}>
-						    <li className={view.name} onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}>
+						    <li className={view.name} onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
 			                  <a href="#">
 			                  <i className={iconClass}></i> {view.name}
 			                  </a>

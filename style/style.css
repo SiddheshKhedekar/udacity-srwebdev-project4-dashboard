@@ -279,7 +279,15 @@ li.table {
     text-align: center;
     margin: 2rem 0;
 }
-
+#viewDetails {
+    margin-top: 6rem;
+}
+.col-md-6.card {
+    float: left;
+    width: 48%;
+    margin: 1%;
+    text-align: center;
+}
 /*===========================================================
 
    Table Widget Component Styles

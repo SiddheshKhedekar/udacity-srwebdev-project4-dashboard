@@ -1,5 +1,9 @@
 ** Changelog for Dashoard
 
+v0.5
+- revised DevOps to allow view selection from nav
+- refactored listHide to be usable accross multiple components
+
 v0.4
 - refactored data so only 3 reviews remain
 - set up actions / reducers / containers to properly display content

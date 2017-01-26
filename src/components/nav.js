@@ -6,7 +6,52 @@
 
 import React, { Component } from 'react';
 
-export default class Nav extends Component {
+import { connect } from 'react-redux';
+
+import { bindActionCreators } from 'redux';
+
+import selectView from '../actions/select_view'
+
+// imports lodash plugin
+import _ from 'lodash';
+
+import listHide from './render_functions.js'
+
+class Nav extends Component {
+	constructor(props){
+		super(props);
+
+		this.state = {
+			searchTerm:'',
+			currentlySelected: this.props.views
+		};
+	}
+	searchButtonPress(event){
+
+		// creates 
+		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.id));
+
+		// sets the state based on filter
+		this.setState({
+			currentlySelected: searchFilter
+		});
+		console.log(this.state.searchTerm);
+		console.log(this.state.currentlySelected);
+	}
+  	selectChildView(view){
+		return this.props.selectView(view);
+  	}
+  	renderViewLinks(){
+  	return this.state.currentlySelected.map((view) => {
+  		return (
+			<div className="viewLink" key={view.name}>
+				<button onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>{view.name}</button>
+			</div>
+			);
+		});
+  	}
+
+
   render() {
     return (
     	<div>
@@ -16,7 +61,7 @@ export default class Nav extends Component {
 		    <div className="container nav-container">
 
 		        <div className="navbar-toggleable-xs" id="collapseEx2">
-		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.4</h1>
+		            <h1 className="navbar-brand animated slideInDown">Dashboard - v0.5</h1>
 		        </div>
 
 		    </div>
@@ -38,9 +83,9 @@ export default class Nav extends Component {
 			                  <i className="fa fa-dashboard fa-lg"></i> Dashboard
 			                  </a>
 			                </li>
-
+							
 			                <li  data-toggle="collapse" data-target="#products" className="collapsed active">
-			                  <a href="#"><i className="fa fa-gift fa-lg"></i> UI Elements <span className="arrow"></span></a>
+			                  <a href="#"><i className="fa fa-gift fa-lg"></i>{this.renderViewLinks()}</a>
 			                </li>
 			                <ul className="sub-menu collapse" id="products">
 			                    <li className="active"><a href="#">CSS3 Animation</a></li>
@@ -95,3 +140,51 @@ export default class Nav extends Component {
     );
   }
 }
+// exactly how it sounds, it maps the state into the props method
+// whatever returns, will show up as this.props inside of BookList
+// this is a built in function of React
+function mapStateToProps(state) {
+
+	// this defines the state of this component
+	return {
+		// this is the KEY or what we want to call what is attached to this component's .props
+		views: 
+		// this is the actual DATA of the KEY books within reducers.js, which contains the JSON
+		state.views
+
+	};
+
+};
+
+// creates the function to join the action creator with the BookList component, to update the app's state
+// anything returned on this function, will end up as .props on the BookList container
+function mapDispatchToProps(dispatch) {
+
+	// Whenever selectBook is called, the result should be passed to all of our reducers
+	// returns the react function, joining selectBook (the action Creator) to the key : selectBook
+	return bindActionCreators({ 
+
+		// this is the KEY the function selectBook is bound to
+		// thanks to this key, the property from the action creator gets passed on to this.book
+		selectView: 
+
+		// this is the actual selectBook function
+		selectView },
+
+		// this is the argument
+		// 
+		// this actually BINDS the arguments above (selectBook) to all our reducers. If this function is called, 
+		// its passed to all the reducers, changing their state if needed
+		dispatch)
+
+}
+
+// this connects the two functions in this container together when exported
+// connect takes a function, and a component (class only), and produces a container
+// a container is again a component that connects react with the redux state
+// 
+// binds the original reducer state change and action creators to the BookList component
+// 
+// essentially this promotes BookList from a component to a container - react needs to know 
+// about this new component selection method, selectBook.
+export default connect(mapStateToProps, mapDispatchToProps) (Nav);

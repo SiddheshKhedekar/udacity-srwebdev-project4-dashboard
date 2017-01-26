@@ -211,3 +211,18 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+
+/*===========================================================
+
+    Search Bar Component Styles
+
+===========================================================*/
+
+.intro {
+    margin: 1rem 0;
+    text-align: center;
+}
+h3.h3-responsive {
+    margin: 1rem 0;
+}

@@ -16,6 +16,8 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
+import listHide from '../components/render_functions.js'
+
 class View extends Component {
 	// sets up the state handler for which books to display
 	constructor(props){
@@ -29,47 +31,11 @@ class View extends Component {
 		// binds the search input
 		this.searchInputChange = this.searchInputChange.bind(this);
 	}
-	// handles the category select setting of state
-	categoryFilterChange(event){
-
-		// creates filter
-		let categoryFilter = _.filter(this.props.views,view => view.category.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: categoryFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
-	// handles the category select setting of state
-	priceFilterChange(event){
-
-		// creates filter
-		let priceFilter = _.filter(this.props.views, view => view.price.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: priceFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
-	// handles the category select setting of state
-	ratingFilterChange(event){
-
-		// creates filter 
-		let ratingFilter = _.filter(this.props.views, view => view.rating.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: ratingFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
 	// handles the search bar setting of state
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.views, view => view.title.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({
@@ -79,27 +45,22 @@ class View extends Component {
 		console.log(this.state.searchTerm);
 		console.log(this.state.currentlySelected);
 	}
-	// creates the function to apply the outro animation to theview list when theview details are expanded
-	listHide(){
-		
-		var viewList = document.querySelector('.viewList');
-		var viewDetails = document.querySelector('.viewDetails');
+	// handles the category select setting of state
+	categoryFilterChange(event){
 
-		// handles animations when list is hiding
-		viewList.classList.add('fadeOutDown');
-		viewList.classList.remove('fadeInUp');
+		const categoryFilterInit = _.filter(this.props.views,view => view.filter.includes("1"||"2"||"3"));
+		let categoryFilter = _.filter(this.props.views,view => view.filter.includes(event.target.value));
 
-		// handlesviewHide classes
-		viewDetails.classList.remove('hidden');
-		viewDetails.classList.remove('heightHidden');
-		viewDetails.classList.remove('fadeOut');
-		viewDetails.classList.add('fadeInDown');
-
-		// hides from the dom after animation is over
-		setTimeout(function(){
-			viewList.classList.add('hidden');
-		}, 1000);
-		
+		if (categoryFilter === "0"){
+			return categoryFilter =  categoryFilterInit;
+		}
+		else if (categoryFilter === !"0"){
+			return categoryFilter;
+		}
+		this.setState({
+			currentlySelected: categoryFilter
+		});
+		console.log(this.state.currentlySelected);
 	}
 
 	renderList() {
@@ -126,7 +87,7 @@ class View extends Component {
 		        <div className="bottom">
 		        	<span className="viewPrice"><small>avarage</small></span>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); this.listHide();}}
+					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>
@@ -145,7 +106,7 @@ class View extends Component {
 		return (
 			<section className="viewList animated fadeInUp col-md-12">
 				<div className="col-md-12 intro card">
-		            <h3 className="h3-responsive">Select aview to get started</h3>
+		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">
 						<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
 						<input 
@@ -155,55 +116,9 @@ class View extends Component {
 							value={this.state.searchTerm}
 							onChange={event => this.searchInputChange(event)}
 							autofocus
-							placeholder="Filter views by title"
+							placeholder="Filter restaurants by title"
 						 />
 					 </div>
-					<div className="form-group col-md-12">
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
-							<select 
-								id="categoryFilter"
-								className="form-control"
-								onChange={event => this.categoryFilterChange(event)}
-							>
-								<option value="">Select a Category</option>
-								<option value="oriental">Oriental</option>
-								<option value="fast food">Fast Food</option>
-								<option value="mexican">Mexican</option>
-								<option value="indian">Indian</option>
-								<option value="greek">Greek</option>
-							</select>
-						</div>
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="priceFilter">Select a Price Range</label>
-							<select 
-								id="priceFilter"
-								className="form-control"
-								onChange={event => this.priceFilterChange(event)}
-							>
-								<option value="">Select a Price</option>
-								<option value="10">$10 Avarage</option>
-								<option value="15">$15 Avarage</option>
-								<option value="20">$20 Avarage</option>
-								<option value="25">$25 Avarage</option>
-								<option value="30">$30 Avarage</option>
-							</select>
-						</div>
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="ratingFilter">Select Rating Range</label>
-							<select 
-								id="ratingFilter"
-								className="form-control"
-								onChange={event => this.ratingFilterChange(event)}
-							>
-								<option value="">Select a Rating</option>
-								<option value="2">2 stars or less</option>
-								<option value="3">3 stars or less</option>
-								<option value="4">4 stars or less</option>
-								<option value="5">5 stars or less</option>
-							</select>
-						</div>
-					</div>
 				</div>
 				{this.renderList()}
 			</section>

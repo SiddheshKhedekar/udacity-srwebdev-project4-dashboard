@@ -52,7 +52,7 @@ class Nav extends Component {
   		}
   		return (
 			<div className="viewLink" key={view.name}>
-						    <li className={view.name} onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
+						    <li className={view.name} onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}>
 			                  <a href="#">
 			                  <i className={iconClass}></i> {view.name}
 			                  </a>

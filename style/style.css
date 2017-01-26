@@ -109,7 +109,7 @@ header {
   background-color: #2c3982;
   position: fixed;
   top: 1px;
-  width: 300px;
+  width: 15%;
   height: 100%;
   color: #e1ffff;
 }
@@ -393,7 +393,7 @@ h4.card-title {
     Responsive Styles
 
 ===========================================================*/
-@media screen and (min-width: 0px) and (max-width: 1200px) {
+@media screen and (min-width: 0px) and (max-width: 1000px) {
 main.container {
     width: 100%;
     padding: 0;
@@ -460,17 +460,17 @@ table#tableShrunk {
 }
 .detailCard {margin: 6rem 5% 6rem;width: 90% !important;padding: 0 !important;}
 }
-@media screen and (min-width: 1200px) and (max-width: 1600px) {
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
 .navbar {
     display: none !Important;
 }
 #viewDetails {
-    margin-top: 0;
+    margin: 2rem 0;
 }
 h3.brand {
     padding-top: 0 !important;
 }
 .detailCard svg {
-    min-height: 400px !important;
+    min-height: 500px !important;
 }
 }

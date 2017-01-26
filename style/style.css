@@ -231,7 +231,9 @@ body {
   padding: 0px;
 }
 
-
+.nav-side-menu {
+    display: none;
+}
 /*===========================================================
 
     Search Bar Component Styles
@@ -272,9 +274,6 @@ li.table {
    Map Widget Component Styles
 
 ===========================================================*/
-.datamap-outer-conainer svg {
-    min-height: 600px;
-}
 .mapDescription {
     text-align: center;
     margin: 2rem 0;
@@ -341,4 +340,24 @@ polyline {
 }
 h4.card-title {
     text-transform: capitalize;
+}
+
+/*===========================================================
+
+    Responsive Styles
+
+===========================================================*/
+@media screen and (min-width: 0px) and (max-width: 768px) {
+main.container {
+    width: 100%;
+    padding: 0;
+}
+
+section#viewDetails {
+    margin-top: 3rem;
+}
+
+article#geomap {
+    padding: 0;
+}
 }

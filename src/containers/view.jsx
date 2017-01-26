@@ -45,6 +45,7 @@ class View extends Component {
 		});
 	}
 	// handles the category select setting of state
+	// will enable at a later date
 	categoryFilterChange(event){
 
 		const categoryFilterInit = _.filter(this.props.views,view => view.filter.includes("1"||"2"||"3"));

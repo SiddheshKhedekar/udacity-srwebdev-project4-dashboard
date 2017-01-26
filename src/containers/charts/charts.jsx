@@ -30,24 +30,25 @@ class Charts extends Component {
 	renderCharts(chartData){
 
 		// sets up the variable to map each pressure array and generate our chart 
-		const numbers = chartData.data.map(chartNumbers => chartNumbers.data);
-		console.log(numbers);
+		const names = chartData.name;
+		const data = chartData.data;
+		const id = chartData.id;
+
 		const lineChartID = "1";		
-		let lineChartData = _.filter(chartData, name => name.includes(lineChartID));
+		var lineChartData = _.filter(id.includes(lineChartID));
 		var lineChartNumbers = lineChartData.map(thisChartData => thisChartData.data);
 
 		const barChartID = "2";		
-		let barChartData = _.filter(chartData.data, data => data.name.includes(barChartID));
-		var barChartNumbers = barChartData.data.map(chartNumbers => chartNumbers.data);
+		let barChartData = _.filter(id.includes(barChartID));
+		var barChartNumbers = barChartData.map(thisChartData => thisChartData.data);
 
 		// sets up the variable to map each humidity array and generate our chart 
-		const name = chartData.name;
-		const id = chartData.id;
-		console.log("Numbers": numbers);
-		console.log("Names": name);
-		console.log("ID": id);
+
+		console.log("Names:" + names);
+		console.log("data:" + data);
+		console.log("line data:" + lineChartData);
 		return(
-			<article className="card animated fadeInDown" key={name}>
+			<article className="card animated fadeInDown" key={id}>
 				    <div className="card-block">
 				        <h4 className="card-title animated fadeInDown">Forecast for {name}</h4>
 				    </div>

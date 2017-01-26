@@ -13,8 +13,6 @@ import { bindActionCreators } from 'redux';
 
 import selectRestaurant from '../actions/select_restaurant'
 
-
-
 class View extends Component {
 	// sets up the state handler for which books to display
 	constructor(props){
@@ -128,7 +126,6 @@ class View extends Component {
 				<h4 className="card-title">{restaurant.title}
 				<br/>
 				<small> {restaurant.category}</small></h4>
-				<StarRatingWidget rating={rating} />
 		        <p className="card-text">{restaurant.description}</p>
 		        <div className="bottom">
 		        	<span className="restaurantPrice">${restaurant.price} <small>avarage</small></span>

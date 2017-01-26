@@ -11,6 +11,7 @@ import Nav from './nav';
 import Footer from './footer';
 import Map from './map';
 import Table from './table';
+import ViewAll from '../containers/view';
 
 export default class View extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class View extends Component {
       <div>
       <Nav />
     	<main className="container">
+      <ViewAll />
       <div>
 		    <Map />
       </div>

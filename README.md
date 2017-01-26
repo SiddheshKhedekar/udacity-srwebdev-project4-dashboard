@@ -41,6 +41,8 @@ $ npm build
 
 [simple-data-table-map] (https://github.com/caspg/simple-data-table-map)
 
+[Bootstrap Responsive Navigation Menu] (http://bootsnipp.com/snippets/featured/responsive-navigation-menu)
+
 ##  Tutorials
 
 [Udemy - Modern React with Redux] (https://www.udemy.com/react-redux/)

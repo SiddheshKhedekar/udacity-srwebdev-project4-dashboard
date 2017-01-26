@@ -254,6 +254,10 @@ h3.h3-responsive {
 .card-block {
     padding-top: 0 !important;
 }
+.viewCard {
+    margin: 3rem 0;
+    padding: 2rem;
+}
 
 /*===========================================================
 
@@ -262,4 +266,8 @@ h3.h3-responsive {
 ===========================================================*/
 .datamap-outer-conainer svg {
     min-height: 600px;
+}
+.mapDescription {
+    text-align: center;
+    margin: 2rem 0;
 }

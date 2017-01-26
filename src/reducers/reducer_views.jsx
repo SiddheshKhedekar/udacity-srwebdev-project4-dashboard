@@ -11,9 +11,9 @@
 // 
 // 
 import React, { Component } from 'react';
-
 import Map from '../containers/map/map';
 import Table from '../components/Table';
+import Charts from '../containers/charts/charts';
 
 // create the JS to hold the book data
 function viewReducer() {
@@ -22,7 +22,7 @@ function viewReducer() {
 	return [
 		{ id:'1', component: <Table />, details:'View a report on our most recent issues', name:'table', active: '0'},
 		{ id:'2', component: <Map />, details:'These is the number and density of our employees across the US', name:'map', active: '0'},
-		{ id:'3', component: '', details:'Go through our charts reporting issues over time', name:'chart', active: '0'}
+		{ id:'3', component: <Charts />, details:'Go through our charts reporting issues over time', name:'chart', active: '0'}
 ];
 
 }

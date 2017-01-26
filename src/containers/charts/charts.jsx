@@ -1,17 +1,16 @@
 // =============================================================
 // 
-// 	weather_list.js
+// 	charts_list.js
 //
 // =============================================================
 
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import ChartLines from '../components/chart_lines';
-import ChartBars from '../components/chart_bars';
-import ChartSpots from '../components/chart_spots';
-import GoogleMap from '../components/google_map';
+import ChartLines from './components/chart_lines';
+import ChartBars from './components/chart_bars';
+import ChartSpots from './components/chart_spots';
 
-class WeatherList extends Component {
+class Charts extends Component {
 	renderWeather(cityData){
 		
 		// this assigns a var to our cityData
@@ -21,17 +20,17 @@ class WeatherList extends Component {
 		// after mapping the correct data
 		// 
 		// this basically grabs the cityData.list object, then maps out every child array with a function
-		const temps = cityData.list.map(weatherTemps => 
+		const temps = cityData.list.map(chartsTemps => 
 			// this then grabs all the VALUES of the temp array, which contains the city's temperature for the next 5 days
-			weatherTemps.main.temp);
+			chartsTemps.main.temp);
 		console.log(temps);
 
 		// sets up the variable to map each pressure array and generate our chart 
-		const pressures = cityData.list.map(weatherPress => weatherPress.main.pressure);
+		const pressures = cityData.list.map(chartsPress => chartsPress.main.pressure);
 		console.log(pressures);
 
 		// sets up the variable to map each humidity array and generate our chart 
-		const humidities = cityData.list.map(weatherHumi => weatherHumi.main.humidity);
+		const humidities = cityData.list.map(chartsHumi => chartsHumi.main.humidity);
 		console.log(humidities);
 
 		/* this is the ES5 way of grabbing the data
@@ -51,7 +50,6 @@ class WeatherList extends Component {
 				        <h4 className="card-title animated fadeInDown">Forecast for {cityName}</h4>
 				    </div>
 				    <section className="animated fadeInUp mapContainer">
-				    	<GoogleMap zoom={12} lon={lon} lat={lat} />
 				    </section>
 					<section className="charts">
 						<div className="chartContainer first animated fadeInUp">
@@ -71,7 +69,7 @@ class WeatherList extends Component {
 	render(){
 		return(
 			<div>
-				{this.props.weather.map(this.renderWeather)}
+				{this.props.charts.map(this.renderWeather)}
 		</div>
 			
 
@@ -80,9 +78,9 @@ class WeatherList extends Component {
 
 }
 
-// this is how it's usually written, to pass the state.weather object into this container
+// this is how it's usually written, to pass the state.charts object into this container
 /* function mapStateToProps(state){
-	return {weather: state.weather};
+	return {charts: state.charts};
 } */
 
 // we can also write it with EMC6 syntax
@@ -90,7 +88,7 @@ class WeatherList extends Component {
 
  	// this is how the function now looks
  	/*
-	return { weather: weather }; */
+	return { charts: charts }; */
 
 	//this can be further condensed with ES6 like so:
 	// because both the key and the value object have the same identifier
@@ -99,4 +97,4 @@ class WeatherList extends Component {
 
 // if we are adding a reducer, we use mapstate to props, which is the first argument of connect, the second argument can be left empty
 // since there are no actions here
-export default connect(mapStateToProps)(WeatherList);
+export default connect(mapStateToProps)(Charts);

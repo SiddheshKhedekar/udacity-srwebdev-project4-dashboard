@@ -1,13 +1,28 @@
+
+
 import React, { Component } from 'react';
 
-import View from './view';
+// custom components
+import Nav from './nav';
+import Footer from './footer';
+import Map from './map';
+import Table from './table';
+import View from '../containers/view';
 
 export default class App extends Component {
   render() {
     return (
-    	<div>
-        <View />
+      <div>
+      <Nav />
+    	<main className="container">
+      <View />
+      <div>
+		    <Map />
       </div>
+      <Table />
+      </main>
+      <Footer />
+    </div>
     );
   }
 }

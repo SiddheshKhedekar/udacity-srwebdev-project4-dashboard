@@ -11,9 +11,9 @@ import Nav from './nav';
 import Footer from './footer';
 import Map from './map';
 import Table from './table';
-import ViewAll from '../containers/view';
+import View from '../containers/view';
 
-export default class View extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>

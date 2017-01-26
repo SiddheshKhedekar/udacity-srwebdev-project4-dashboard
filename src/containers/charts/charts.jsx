@@ -11,38 +11,38 @@ import ChartBars from './components/chart_bars';
 import ChartSpots from './components/chart_spots';
 
 class Charts extends Component {
-	renderWeather(cityData){
+	renderCharts(chartData){
 		
-		// this assigns a var to our cityData
-		const cityName = cityData.city.name;
+		// this assigns a var to our chartData
+		const chartName = chartData.city.name;
 
 		// for our sparklines charts to work, we basically just need an array of numbers, which is what is passed into the temps const
 		// after mapping the correct data
 		// 
-		// this basically grabs the cityData.list object, then maps out every child array with a function
-		const temps = cityData.list.map(chartsTemps => 
+		// this basically grabs the chartData object, then maps out every child array with a function
+		const numbers = chartData.list.map(chartData => 
 			// this then grabs all the VALUES of the temp array, which contains the city's temperature for the next 5 days
-			chartsTemps.main.temp);
-		console.log(temps);
+			chartData.data);
+		console.log(numbers);
 
 		// sets up the variable to map each pressure array and generate our chart 
-		const pressures = cityData.list.map(chartsPress => chartsPress.main.pressure);
-		console.log(pressures);
+		const id = chartData.list.map(chartData => chartData.id);
+		console.log(ids);
 
 		// sets up the variable to map each humidity array and generate our chart 
-		const humidities = cityData.list.map(chartsHumi => chartsHumi.main.humidity);
-		console.log(humidities);
+		const name = chartData.list.map(chartData => chartData.name);
+		console.log(name);
 
 		/* this is the ES5 way of grabbing the data
-		// sets up the variable to grab the .lon array from cityData
-		const lon = cityData.city.coord.lon;
+		// sets up the variable to grab the .lon array from chartData
+		const lon = chartData.city.coord.lon;
 
-		// sets up the variable to grab the .lat array from cityData
-		const lat = cityData.city.coord.lat;
+		// sets up the variable to grab the .lat array from chartData
+		const lat = chartData.city.coord.lat;
 		*/
 	
 		// this is the ES6 way of grabbing the lon / lat data
-		const { lon, lat } = cityData.city.coord;
+		const { lon, lat } = chartData.city.coord;
 
 		return(
 			<article className="card animated fadeInDown" key={cityName}>
@@ -69,7 +69,7 @@ class Charts extends Component {
 	render(){
 		return(
 			<div>
-				{this.props.charts.map(this.renderWeather)}
+				{this.props.charts.map(this.renderCharts)}
 		</div>
 			
 

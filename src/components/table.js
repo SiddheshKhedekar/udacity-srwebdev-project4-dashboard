@@ -92,9 +92,9 @@ $(document).ready(function() {
 export default class Table extends Component {
   render() {
     return (
-        <article className="card">
+        <div className="">
 			<table id="tableShrunk" className="display secondaryWidget" width="100%"></table>
-        </article>
+        </div>
     );
   }
 }

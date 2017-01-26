@@ -286,3 +286,6 @@ li.table {
 article#table .btn {
     display: none;
 }
+#table #tableShrunk_wrapper {
+    padding: 2rem;
+}

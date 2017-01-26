@@ -319,10 +319,12 @@ h3.brand {
     text-align: center;
 }
 
-.chart section#1{
-  background-color: #000;
+#pyc {
+    background-color: #05b54e;
+    color: #fff;
 }
 
-.chart section#2{
-  background-color: #000;
+div#ri {
+    background-color: #2c3982;
+    color: #fff;
 }

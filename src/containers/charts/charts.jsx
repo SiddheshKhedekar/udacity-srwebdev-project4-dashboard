@@ -31,6 +31,7 @@ class Charts extends Component {
 
 		// sets up the variable to map each pressure array and generate our chart 
 		const name = chartData.name;
+		const short = chartData.short;
 		const data = chartData.data;
 		const id = chartData.id;
 
@@ -54,14 +55,14 @@ class Charts extends Component {
 						<div className="card-block">
 				        	<h4 className="card-title">Forecast for {name}</h4>
 				   		</div>
-							<ChartBars chartData={data} color="#2c3982" units="%"/>
+							<ChartBars chartData={data} color="#05b54e" units="%"/>
 						</div>
 					</div>
 					);
 			}
 		};
 		return(
-			<div id={id} className="card animated fadeInDown col-md-6" key={id}>
+			<div id={short} className="card animated fadeInDown col-md-6" key={id}>
 						{renderFromData()}
 			</div >
 		);

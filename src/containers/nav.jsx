@@ -45,7 +45,14 @@ class Nav extends Component {
   	return this.state.currentlySelected.map((view) => {
   		return (
 			<div className="viewLink" key={view.name}>
-				<button onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>{view.name}</button>
+						    <li>
+			                  <a href='#'>
+			                  <button
+			                  onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>
+			                  </button>
+			                  <i className="fa fa-dashboard fa-lg"></i> {view.name}
+			                  </a>
+			                </li>
 			</div>
 			);
 		});
@@ -83,9 +90,9 @@ class Nav extends Component {
 			                  <i className="fa fa-dashboard fa-lg"></i> Dashboard
 			                  </a>
 			                </li>
-							
+							{this.renderViewLinks()}
 			                <li  data-toggle="collapse" data-target="#products" className="collapsed active">
-			                  <a href="#"><i className="fa fa-gift fa-lg"></i>{this.renderViewLinks()}</a>
+			                  <a href="#"><i className="fa fa-gift fa-lg"></i></a>
 			                </li>
 			                <ul className="sub-menu collapse" id="products">
 			                    <li className="active"><a href="#">CSS3 Animation</a></li>

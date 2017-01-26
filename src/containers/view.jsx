@@ -18,6 +18,7 @@ import _ from 'lodash';
 
 import listHide from '../components/render_functions.js'
 
+
 class View extends Component {
 	// sets up the state handler for which books to display
 	constructor(props){
@@ -61,7 +62,6 @@ class View extends Component {
 	}
 
 	renderList() {
-
 		return this.state.currentlySelected.map((view) => {
 
 			return (
@@ -76,7 +76,7 @@ class View extends Component {
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
+					onClick={() => {this.props.selectView(view); listHide($('#viewList'), $('#viewDetails'));}}
 			        >
 			        Learn More
 			        </a>
@@ -92,7 +92,7 @@ class View extends Component {
 
 		//DONT FORGET TO RETURN HERE, JUST SPENT AN HOUR DEBUGGING THIS AREA
 		return (
-			<section className="viewList animated fadeInUp col-md-12">
+			<section id="viewDetails" className="viewList animated fadeInUp col-md-12">
 				<div className="col-md-12 intro card">
 		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">

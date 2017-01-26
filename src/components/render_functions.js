@@ -13,19 +13,20 @@ export default function listHide(containerHidden, containerShow){
 		var show = document.querySelector(containerShow);
 
 		// handles animations when list is hiding
-		hide.classList.add('fadeOutDown');
+		hide.classList.add('fadeOut');
 		hide.classList.remove('fadeInUp');
 
 		// handlesviewHide classes
 		show.classList.remove('hidden');
-		show.classList.remove('hidden');
-		show.classList.remove('fadeOut');
-		show.classList.add('fadeInDown');
+		setTimeout(function(){
+			show.classList.add('fadeIn');
+		}, 1000);
+
 
 		// hides from the dom after animation is over
 		setTimeout(function(){
 			hide.classList.add('hidden');
-		}, 1000);
+		}, 500);
 		
 };
 	

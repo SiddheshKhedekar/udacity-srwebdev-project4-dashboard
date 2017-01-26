@@ -1,5 +1,10 @@
 ** Changelog for Dashoard
 
+v0.8
+- prototype to test responsive
+- prototype to fix bug with animations, fix ugly animation issues
+- prototype to test for production
+
 v0.7
 - cleaned up individual components
 - fixed map individual component

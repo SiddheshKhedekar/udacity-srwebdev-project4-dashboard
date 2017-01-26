@@ -18,10 +18,14 @@ class Charts extends Component {
 	constructor(props){
 		super(props);
 
+
 		this.state = {
-			charts: ''
+			charts: this.props.charts
 		};
 		
+	}
+	i(){
+		console.log(this.charts);
 	}
 	renderCharts(chartData){
 
@@ -62,8 +66,10 @@ class Charts extends Component {
 	}
 	
 	render(){
+	console.log(this.state.charts);
 		return(
 			<div>
+			<button onClick={() => (this.i())}>TEST</button>
 		</div>
 			
 

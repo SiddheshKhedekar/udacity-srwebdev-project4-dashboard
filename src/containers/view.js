@@ -29,42 +29,6 @@ class View extends Component {
 		// binds the search input
 		this.searchInputChange = this.searchInputChange.bind(this);
 	}
-	// handles the category select setting of state
-	categoryFilterChange(event){
-
-		// creates filter
-		let categoryFilter = _.filter(this.props.views,view => view.category.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: categoryFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
-	// handles the category select setting of state
-	priceFilterChange(event){
-
-		// creates filter
-		let priceFilter = _.filter(this.props.views, view => view.price.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: priceFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
-	// handles the category select setting of state
-	ratingFilterChange(event){
-
-		// creates filter 
-		let ratingFilter = _.filter(this.props.views, view => view.rating.includes(event.target.value));
-
-		// sets the state based on filter
-		this.setState({
-			currentlySelected: ratingFilter
-		});
-		console.log(this.state.currentlySelected);
-	}
 	// handles the search bar setting of state
 	searchInputChange(event){
 
@@ -79,6 +43,7 @@ class View extends Component {
 		console.log(this.state.searchTerm);
 		console.log(this.state.currentlySelected);
 	}
+
 	// creates the function to apply the outro animation to theview list when theview details are expanded
 	listHide(){
 		
@@ -158,52 +123,6 @@ class View extends Component {
 							placeholder="Filter views by title"
 						 />
 					 </div>
-					<div className="form-group col-md-12">
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
-							<select 
-								id="categoryFilter"
-								className="form-control"
-								onChange={event => this.categoryFilterChange(event)}
-							>
-								<option value="">Select a Category</option>
-								<option value="oriental">Oriental</option>
-								<option value="fast food">Fast Food</option>
-								<option value="mexican">Mexican</option>
-								<option value="indian">Indian</option>
-								<option value="greek">Greek</option>
-							</select>
-						</div>
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="priceFilter">Select a Price Range</label>
-							<select 
-								id="priceFilter"
-								className="form-control"
-								onChange={event => this.priceFilterChange(event)}
-							>
-								<option value="">Select a Price</option>
-								<option value="10">$10 Avarage</option>
-								<option value="15">$15 Avarage</option>
-								<option value="20">$20 Avarage</option>
-								<option value="25">$25 Avarage</option>
-								<option value="30">$30 Avarage</option>
-							</select>
-						</div>
-						<div className="col-md-4 selectFilter">
-							<label className="hidden" htmlFor="ratingFilter">Select Rating Range</label>
-							<select 
-								id="ratingFilter"
-								className="form-control"
-								onChange={event => this.ratingFilterChange(event)}
-							>
-								<option value="">Select a Rating</option>
-								<option value="2">2 stars or less</option>
-								<option value="3">3 stars or less</option>
-								<option value="4">4 stars or less</option>
-								<option value="5">5 stars or less</option>
-							</select>
-						</div>
-					</div>
 				</div>
 				{this.renderList()}
 			</section>

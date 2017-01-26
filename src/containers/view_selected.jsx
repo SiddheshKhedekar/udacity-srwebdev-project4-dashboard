@@ -53,7 +53,7 @@ class ViewSelected extends Component {
 		return (
 		<div className="col-md-12 viewDetails animated fadeInUp">
 			
-			<article className="card">
+			<section className="card">
 
 
 			    <div className="card-block">
@@ -78,7 +78,7 @@ class ViewSelected extends Component {
 
 			    
 
-			</article>
+			</section>
 			</div>
 		);
 	}

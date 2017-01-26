@@ -277,3 +277,12 @@ li.table {
     text-align: center;
     margin: 2rem 0;
 }
+
+/*===========================================================
+
+   Table Widget Component Styles
+
+===========================================================*/
+article#table .btn {
+    display: none;
+}

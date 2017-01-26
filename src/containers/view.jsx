@@ -36,7 +36,7 @@ class View extends Component {
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views, view => view.shortdesc.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({
@@ -69,6 +69,7 @@ class View extends Component {
 			<article id={view.name} className="viewCard card col-md-12"
 				key={view.name} 
 			>
+			<h4 className="card-title">{view.shortdesc}</h4>
 			<div className={view.name}>{view.component}</div>
 
 		    <div className="card-block">

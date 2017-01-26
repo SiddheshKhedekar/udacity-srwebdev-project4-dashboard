@@ -296,6 +296,13 @@ text-align: center;
 li.table {
     display: none !Important;
 }
+.card {
+    padding: 1rem 2rem;
+}
+
+.card h4 {
+    text-align: center;
+}
 /*===========================================================
 
    Map Widget Component Styles

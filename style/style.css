@@ -322,6 +322,9 @@ li.table {
     margin: 1%;
     text-align: center;
 }
+#mobileHandle {
+    display: none;
+}
 /*===========================================================
 
    Table Widget Component Styles
@@ -415,13 +418,26 @@ i.fa.fa-bars.fa-2x.toggle-btn {
     width: 99%;
     margin: 1rem 0;
 }
+#table p {
+    text-align: center;
+    margin-top: 1rem;
+}
 
+#table .card-block {
+    display: none;
+}
 #charts {
     margin-bottom: 6rem;
     padding-bottom: 0;
 }
 .navbar {
     display: none !important;
+}
+#mobileHandle {
+    display: block;
+}
+.dataTables_wrapper {
+    display: none;
 }
 .detailCard {margin: 6rem 5% 6rem;width: 90% !important;padding: 0 !important;}
 }

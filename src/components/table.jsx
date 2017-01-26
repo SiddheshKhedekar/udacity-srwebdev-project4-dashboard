@@ -95,8 +95,8 @@ export default class Table extends Component {
         <div>
 			  <table id="tableShrunk" className="display secondaryWidget" width="100%"></table>
         <div id="mobileHandle">
-          <h4>Switch to a Desktop Device to load the table filter data API</h4>
           <img src="../../img/data-filter-mobile.jpg" alt="mobile data filter image"/>
+          <p>Switch to a Desktop Device to load the table filter data API</p>
         </div>
         </div>
     );

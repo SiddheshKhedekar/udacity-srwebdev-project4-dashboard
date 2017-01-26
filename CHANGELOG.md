@@ -1,7 +1,7 @@
 ** Changelog for Dashoard
 
 v0.4
-- prototype refactor content so only 3 views display
+- refactored data so only 3 reviews remain
 - set up actions / reducers / containers to properly display content
 - sidebar added to application, base code from : http://bootsnipp.com/snippets/featured/responsive-navigation-menu
 - 

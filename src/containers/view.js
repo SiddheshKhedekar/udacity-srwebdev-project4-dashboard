@@ -101,23 +101,16 @@ class View extends Component {
 		}, 1000);
 		
 	}
-	
-	// this will set up the function to render our list
-	// we will be adding the list of books to our props object later
+
 	renderList() {
 
-		// creates the map of the books array, setting up an object for each index and calling it 'book'
-		// return this.props.views.map((view) => {
 		return this.state.currentlySelected.map((view) => {
-			// returns our book properties within an li
-			// on this.props.selectBook, it passes the value of the book that was clicked (or in other words the individual book object)
-			// to the selectBook action reducer
-			const rating = parseInt(view.rating);
+
 			return (
 			<article className="viewCard card col-md-4"
-				key={view.title} 
+				key={view.name} 
 			>
-			<div>{view.image}</div>
+			<div>{view.component}</div>
 		    <div className="view overlay hm-white-slight">
 		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
 		        <a href="#">
@@ -126,12 +119,12 @@ class View extends Component {
 		    </div>
 
 		    <div className="card-block">
-				<h4 className="card-title">{view.title}
+				<h4 className="card-title">
 				<br/>
-				<small> {view.category}</small></h4>
+				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 		        <div className="bottom">
-		        	<span className="viewPrice">${view.price} <small>avarage</small></span>
+		        	<span className="viewPrice"><small>avarage</small></span>
 			        <a href="#" className="btn btn-primaryviewOpen"
 					onClick={() => {this.props.selectView(view); this.listHide();}}
 			        >

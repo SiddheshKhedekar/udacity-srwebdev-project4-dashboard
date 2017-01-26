@@ -55,7 +55,6 @@ class ViewSelected extends Component {
 			);
 		}
 		
-		const rating = parseInt(this.props.view.rating);
 		return (
 		<div className="col-md-12 viewDetails animated fadeInDown">
 			
@@ -67,19 +66,16 @@ class ViewSelected extends Component {
 
 			        <div className="col-md-12 viewTitle">
 
-                		<h1 className="h1-responsive">{this.props.view.title} 
-                    		<small className="text-muted"> {this.props.view.category}</small>
+                		<h1 className="h1-responsive">{this.props.view.name} 
                 		</h1>
 
             		</div>
 
             		<div className="detailContainer">
-						{this.props.view.image}
+						{this.props.view.component}
 
 						<div className="starRating">
 						</div>
-
-						<div className="viewDescription"> {this.props.view.ldescription} </div>
 						<div className="reviewContainer"> 
 							<h2>Reviews</h2>
 							<div id="postReview" className="hidden animated">
@@ -87,19 +83,15 @@ class ViewSelected extends Component {
 						</div>
 						<div className="detailBottom first">
 
-							<span className="viewHours">Hours of operation: <small>{this.props.view.hours}</small></span>
+							<span className="viewHours">Hours of operation: <small></small></span>
 
-							<span className="viewAddress">Address: <small>{this.props.view.address}</small></span>
+							<span className="viewAddress">Address: <small>{this.props.view.details}</small></span>
 
 						</div>
 
 						<div className="detailBottom">
 
-							<span className="viewPrice">${this.props.view.price} <small>avarage</small></span>
-
-						    <button className="btn btn-primary" onClick={() => this.viewHide()}>Return to selection</button>
-
-						    <button className="btn btn-primary" onClick={event => this.postReview(event)}>Post a Review</button>
+							<span className="viewPrice"><small>avarage</small></span>
 
 						</div>
 

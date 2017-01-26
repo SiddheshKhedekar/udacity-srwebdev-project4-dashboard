@@ -74,6 +74,7 @@ header {
 #application {
     display: inline-block;
     width: 100%;
+    height: auto !Important;
 }
 /*===========================================================
 
@@ -261,7 +262,9 @@ h3.h3-responsive {
     margin: 3rem 0;
     padding: 2rem;
 }
-
+li.table {
+    display: none !Important;
+}
 /*===========================================================
 
    Map Widget Component Styles

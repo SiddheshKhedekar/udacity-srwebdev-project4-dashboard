@@ -249,8 +249,17 @@ h3.h3-responsive {
 .widgetTitle h2 {
     text-align: center;
     text-transform: capitalize;
-    padding: 3rem 0;
+    padding: 1rem 0;
 }
 .card-block {
     padding-top: 0 !important;
+}
+
+/*===========================================================
+
+   Map Widget Component Styles
+
+===========================================================*/
+.datamap-outer-conainer svg {
+    min-height: 600px;
 }

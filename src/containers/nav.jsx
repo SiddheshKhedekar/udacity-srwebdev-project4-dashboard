@@ -83,7 +83,7 @@ class Nav extends Component {
 
 
 			<div className="nav-side-menu">
-			    <div className="brand">Dashboard Widgets</div>
+			    <h3 className="brand">Dashboard Widgets</h3>
 			    <i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 			  
 			        <div className="menu-list">

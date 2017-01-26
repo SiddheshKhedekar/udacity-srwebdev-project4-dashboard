@@ -2,10 +2,10 @@
 
 v0.7
 - prototype to clean up individual components
-- prototype to fix map individual component
-- prototype to fix table individual component
+- fixed map individual component
+- hid individual table component for now
 - prototype to install chart component
-- prototype to enhance list logic
+- Enhanced view render logic, enabled changing of state from nav
 
 v0.6
 - cleaned up semenatics

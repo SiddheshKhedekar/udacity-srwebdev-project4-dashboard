@@ -32,13 +32,6 @@ class ViewSelected extends Component {
 		viewList.classList.remove('hidden');
 		viewList.classList.add('fadeInUp');
 		
-		// handles views for the postReview
-		postReview.classList.add('hidden');
-		postReview.classList.remove('fadeInUp');
-
-		// handles views for the reviewPost
-		reviewPost.classList.add('hidden');
-		reviewPost.classList.remove('fadeInUp');
 	}
 	render(){
 
@@ -62,7 +55,7 @@ class ViewSelected extends Component {
 						<div id="componentDetails" className="animated">
 						</div>
 					</div>
-
+					<div className="viewList"></div>
             		<div className="componentContainer">
 						{this.props.view.component}
 

@@ -21,11 +21,10 @@ function viewReducer() {
 	// returns an array with our data
 	return [
 
-		{ component: <Map />, details:'These is the number and density of our employees across the US', filter:1, name:'map',},
-		{ component: <Table />, details:'View a report on our most recent issues', filter:2, name:'table',},
-		{ component: '', details:'Go through our charts reporting issues over time', filter:3, name:'chart', }
+		{ component: <Map />, details:'These is the number and density of our employees across the US', filter:1, name:'map'},
+		{ component: <Table />, details:'View a report on our most recent issues', filter:2, name:'table'},
+		{ component: '', details:'Go through our charts reporting issues over time', filter:3, name:'chart'}
+];
 
-
-};
-
+}
 export default viewReducer;

@@ -93,6 +93,10 @@ class ViewSelected extends Component {
 
 							<span className="viewPrice"><small>avarage</small></span>
 
+						    <button className="btn btn-primary" onClick={() => this.viewHide()}>Return to selection</button>
+
+
+
 						</div>
 
 					</div>

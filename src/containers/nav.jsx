@@ -82,7 +82,7 @@ class Nav extends Component {
 			        <div className="menu-list">
 			  
 			            <ul id="menu-content" className="menu-content collapse out">
-			                <li>
+			                <li onClick={() => new listHide('.viewList', '.viewDetails')}>
 			                  <a href="#" >
 			                  <i className="fa fa-dashboard fa-lg"></i> Dashboard
 			                  </a>

@@ -76,7 +76,7 @@ class View extends Component {
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
+					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>

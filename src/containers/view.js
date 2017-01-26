@@ -16,6 +16,8 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
+import listHide from '../components/render_functions.js'
+
 class View extends Component {
 	// sets up the state handler for which books to display
 	constructor(props){
@@ -61,29 +63,6 @@ class View extends Component {
 		console.log(this.state.currentlySelected);
 	}
 
-	// creates the function to apply the outro animation to theview list when theview details are expanded
-	listHide(){
-		
-		var viewList = document.querySelector('.viewList');
-		var viewDetails = document.querySelector('.viewDetails');
-
-		// handles animations when list is hiding
-		viewList.classList.add('fadeOutDown');
-		viewList.classList.remove('fadeInUp');
-
-		// handlesviewHide classes
-		viewDetails.classList.remove('hidden');
-		viewDetails.classList.remove('heightHidden');
-		viewDetails.classList.remove('fadeOut');
-		viewDetails.classList.add('fadeInDown');
-
-		// hides from the dom after animation is over
-		setTimeout(function(){
-			viewList.classList.add('hidden');
-		}, 1000);
-		
-	}
-
 	renderList() {
 
 		return this.state.currentlySelected.map((view) => {
@@ -108,7 +87,7 @@ class View extends Component {
 		        <div className="bottom">
 		        	<span className="viewPrice"><small>avarage</small></span>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); this.listHide();}}
+					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>

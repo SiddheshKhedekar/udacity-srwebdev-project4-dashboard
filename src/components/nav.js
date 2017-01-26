@@ -15,6 +15,7 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
+import listHide from './render_functions.js'
 
 class Nav extends Component {
 	constructor(props){
@@ -24,28 +25,6 @@ class Nav extends Component {
 			searchTerm:'',
 			currentlySelected: this.props.views
 		};
-	}
-	// creates the function to apply the outro animation to theview list when theview details are expanded
-	listHide(){
-		
-		var viewList = document.querySelector('.viewList');
-		var viewDetails = document.querySelector('.viewDetails');
-
-		// handles animations when list is hiding
-		viewList.classList.add('fadeOutDown');
-		viewList.classList.remove('fadeInUp');
-
-		// handlesviewHide classes
-		viewDetails.classList.remove('hidden');
-		viewDetails.classList.remove('heightHidden');
-		viewDetails.classList.remove('fadeOut');
-		viewDetails.classList.add('fadeInDown');
-
-		// hides from the dom after animation is over
-		setTimeout(function(){
-			viewList.classList.add('hidden');
-		}, 1000);
-		
 	}
 	searchButtonPress(event){
 
@@ -66,7 +45,7 @@ class Nav extends Component {
   	return this.state.currentlySelected.map((view) => {
   		return (
 			<div className="viewLink" key={view.name}>
-				<button onClick={() => {this.props.selectView(view); this.listHide();}}>{view.name}</button>
+				<button onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}>{view.name}</button>
 			</div>
 			);
 		});

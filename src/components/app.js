@@ -8,6 +8,7 @@ import Footer from './footer';
 import Map from './map';
 import Table from './table';
 import View from '../containers/view';
+import ViewSelected from '../containers/view_selected';
 
 export default class App extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
       <Nav />
     	<main className="container">
       <View />
+      <ViewSelected />
       <div>
 		    <Map />
       </div>

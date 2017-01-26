@@ -16,7 +16,6 @@ import selectRestaurant from '../actions/select_restaurant'
 // imports lodash plugin
 import _ from 'lodash';
 
-
 class View extends Component {
 	// sets up the state handler for which books to display
 	constructor(props){

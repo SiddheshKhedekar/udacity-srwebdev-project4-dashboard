@@ -74,15 +74,12 @@ class ViewSelected extends Component {
 						<img src={this.props.restaurant.image} />
 
 						<div className="starRating">
-							<StarRatingWidget rating={rating}/>
 						</div>
 
 						<div className="restaurantDescription"> {this.props.restaurant.ldescription} </div>
 						<div className="reviewContainer"> 
 							<h2>Reviews</h2>
-							{this.renderComments()} 
 							<div id="postReview" className="hidden animated">
-								<PostReview />
 							</div>
 						</div>
 						<div className="detailBottom first">

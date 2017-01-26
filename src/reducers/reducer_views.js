@@ -21,9 +21,9 @@ function viewReducer() {
 	// returns an array with our data
 	return [
 
-		{ component: <Map />, details:'These is the number and density of our employees across the US', filter:'1', name:'map', active: '0'},
-		{ component: <Table />, details:'View a report on our most recent issues', filter:'2', name:'table', active: '0'},
-		{ component: '', details:'Go through our charts reporting issues over time', filter:'3', name:'chart', active: '0'}
+		{ id:'1', component: <Map />, details:'These is the number and density of our employees across the US', name:'map', active: '0'},
+		{ id:'2', component: <Table />, details:'View a report on our most recent issues', name:'table', active: '0'},
+		{ id:'3', component: '', details:'Go through our charts reporting issues over time', name:'chart', active: '0'}
 ];
 
 }

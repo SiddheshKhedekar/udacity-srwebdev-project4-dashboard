@@ -43,6 +43,23 @@ class View extends Component {
 		console.log(this.state.searchTerm);
 		console.log(this.state.currentlySelected);
 	}
+	// handles the category select setting of state
+	categoryFilterChange(event){
+
+		const categoryFilterInit = _.filter(this.props.views,view => view.filter.includes("1"||"2"||"3"));
+		let categoryFilter = _.filter(this.props.views,view => view.filter.includes(event.target.value));
+
+		if (categoryFilter === "0"){
+			return categoryFilter =  categoryFilterInit;
+		}
+		else if (categoryFilter === !"0"){
+			return categoryFilter;
+		}
+		this.setState({
+			currentlySelected: categoryFilter
+		});
+		console.log(this.state.currentlySelected);
+	}
 
 	// creates the function to apply the outro animation to theview list when theview details are expanded
 	listHide(){
@@ -72,7 +89,7 @@ class View extends Component {
 		return this.state.currentlySelected.map((view) => {
 
 			return (
-			<article className="viewCard card col-md-12"
+			<article className="viewCard card col-md-4"
 				key={view.name} 
 			>
 			<div>{view.component}</div>
@@ -110,19 +127,24 @@ class View extends Component {
 		return (
 			<section className="viewList animated fadeInUp col-md-12">
 				<div className="col-md-12 intro card">
-		            <h3 className="h3-responsive">Select aview to get started</h3>
+		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">
-						<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
-						<input 
-							id="searchBar"
-							className="form-control"
-							type="text"
-							value={this.state.searchTerm}
-							onChange={event => this.searchInputChange(event)}
-							autofocus
-							placeholder="Filter views by title"
-						 />
 					 </div>
+					<div className="form-group col-md-12">
+						<div className="col-md-4 selectFilter">
+							<label className="hidden" htmlFor="categoryFilter">Select a Category</label>
+							<select 
+								id="categoryFilter"
+								className="form-control"
+								onChange={event => this.categoryFilterChange(event)}
+							>
+								<option value="0">Select a Dashboard Widget</option>
+								<option value="1">Employee Map</option>
+								<option value="2">Recent Issues</option>
+								<option value="3">Issue Charts</option>
+							</select>
+						</div>
+					</div>
 				</div>
 				{this.renderList()}
 			</section>

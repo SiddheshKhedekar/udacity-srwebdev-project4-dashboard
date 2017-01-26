@@ -96,7 +96,7 @@ class View extends Component {
 		//DONT FORGET TO RETURN HERE, JUST SPENT AN HOUR DEBUGGING THIS AREA
 		return (
 			<section className="viewList animated fadeInUp col-md-12">
-				<div className="col-md-12 intro card">
+				<div className="col-md-12 viewDetails intro card">
 		            <h3 className="h3-responsive">Select a Dashboard Widget to get started</h3>
 		            <div className="search-bar md-form col-md-12">
 						<input 

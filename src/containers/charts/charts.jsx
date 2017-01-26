@@ -39,22 +39,22 @@ class Charts extends Component {
 				const lineChartData = data;
 				console.log("line "+lineChartData)
 				return (
-					<section>
+					<id>
 						<div className="chartContainer second animated fadeInUp">
 							<ChartSpots chartData={lineChartData} color="#00FF6A" units="%"/>
 						</div>
-					</section>
+					</id>
 					);
 			}
 			else {
 				const barChartData = data;
 				console.log("bar "+barChartData)
 				return (
-					<section>
+					<id>
 						<div className="chartContainer second animated fadeInUp">
 							<ChartBars chartData={barChartData} color="#00FF6A" units="%"/>
 						</div>
-					</section>
+					</id>
 					);
 			}
 		};
@@ -63,14 +63,14 @@ class Charts extends Component {
 		console.log("Names:" + names);
 		console.log("data:" + data);
 		return(
-			<article className="card animated fadeInDown" key={id}>
+			<section className="card animated fadeInDown col-md-6" key={id}>
 				    <div className="card-block">
 				        <h4 className="card-title animated fadeInDown">Forecast for {name}</h4>
 				    </div>
 					<div>
 						{renderFromData()}
 					</div>
-			</article>
+			</section>
 		);
 	}
 	

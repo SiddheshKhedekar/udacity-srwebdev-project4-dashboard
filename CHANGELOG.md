@@ -1,10 +1,10 @@
 ** Changelog for Dashoard
 
 v0.7
-- prototype to clean up individual components
+- cleaned up individual components
 - fixed map individual component
 - hid individual table component for now
-- prototype to install chart component
+- installed chart component
 - Enhanced view render logic, enabled changing of state from nav
 
 v0.6

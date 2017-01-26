@@ -117,7 +117,7 @@ class View extends Component {
 			<article className="restaurantCard card col-md-4"
 				key={restaurant.title} 
 			>
-
+			<div>{restaurant.image}</div>
 		    <div className="view overlay hm-white-slight">
 		        <img src="http://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" className="img-fluid" alt="" />
 		        <a href="#">

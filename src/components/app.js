@@ -19,7 +19,6 @@ export default class App extends Component {
       <View />
       <ViewSelected />
       <div>
-		    <Map />
       </div>
       <Table />
       </main>

@@ -1,5 +1,9 @@
 ** Changelog for Dashoard
 
+v0.6
+- prototype to clean up semantics
+- prototype to clean up DOM layout / styling
+
 v0.5
 - revised DevOps to allow view selection from nav
 - refactored listHide to be usable accross multiple components

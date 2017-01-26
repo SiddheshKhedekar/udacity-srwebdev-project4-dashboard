@@ -86,7 +86,7 @@ class WeatherList extends Component {
 } */
 
 // we can also write it with EMC6 syntax
- function mapStateToProps({ weather }){
+ function mapStateToProps({ charts }){
 
  	// this is how the function now looks
  	/*
@@ -94,7 +94,7 @@ class WeatherList extends Component {
 
 	//this can be further condensed with ES6 like so:
 	// because both the key and the value object have the same identifier
-	return { weather };
+	return { charts };
 }
 
 // if we are adding a reducer, we use mapstate to props, which is the first argument of connect, the second argument can be left empty

@@ -10,56 +10,51 @@ import ChartLines from './components/chart_lines';
 import ChartBars from './components/chart_bars';
 import ChartSpots from './components/chart_spots';
 
-class Charts extends Component {
-	renderCharts(chartData){
-		
-		// this assigns a var to our chartData
-		const chartName = chartData.city.name;
+// imports lodash plugin
+import _ from 'lodash';
 
-		// for our sparklines charts to work, we basically just need an array of numbers, which is what is passed into the temps const
-		// after mapping the correct data
-		// 
-		// this basically grabs the chartData object, then maps out every child array with a function
-		const numbers = chartData.list.map(chartData => 
-			// this then grabs all the VALUES of the temp array, which contains the city's temperature for the next 5 days
-			chartData.data);
-		console.log(numbers);
+class Charts extends Component {
+		// sets up the state handler for which books to display
+	constructor(props){
+		super(props);
+
+		this.state = {
+			charts: ''
+		};
+		
+	}
+	renderCharts(chartData){
 
 		// sets up the variable to map each pressure array and generate our chart 
-		const id = chartData.list.map(chartData => chartData.id);
-		console.log(ids);
+		const numbers = chartData.data.map(chartNumbers => chartNumbers.data);
+		
+		const lineChartID = "1";		
+		let lineChartData = _.filter(chartData, data => data.name.includes(lineChartID));
+		var lineChartNumbers = lineChartData.data.map(chartNumbers => chartNumbers.data);
+
+		const barChartID = "2";		
+		let barChartData = _.filter(chartData.data, data => data.name.includes(barChartID));
+		var barChartNumbers = barChartData.data.map(chartNumbers => chartNumbers.data);
 
 		// sets up the variable to map each humidity array and generate our chart 
-		const name = chartData.list.map(chartData => chartData.name);
-		console.log(name);
-
-		/* this is the ES5 way of grabbing the data
-		// sets up the variable to grab the .lon array from chartData
-		const lon = chartData.city.coord.lon;
-
-		// sets up the variable to grab the .lat array from chartData
-		const lat = chartData.city.coord.lat;
-		*/
-	
-		// this is the ES6 way of grabbing the lon / lat data
-		const { lon, lat } = chartData.city.coord;
-
+		const name = chartData.name;
+		const id = chartData.id;
+		console.log("Numbers": numbers);
+		console.log("Names": name);
+		console.log("ID": id);
 		return(
-			<article className="card animated fadeInDown" key={cityName}>
+			<article className="card animated fadeInDown" key={name}>
 				    <div className="card-block">
-				        <h4 className="card-title animated fadeInDown">Forecast for {cityName}</h4>
+				        <h4 className="card-title animated fadeInDown">Forecast for {name}</h4>
 				    </div>
 				    <section className="animated fadeInUp mapContainer">
 				    </section>
 					<section className="charts">
 						<div className="chartContainer first animated fadeInUp">
-							<ChartLines chartData={temps} color="#FF5200" units="Kelvin"/>
+							<ChartLines chartData={lineChartNumbers} color="#FF5200" units="Kelvin"/>
 						</div>
 						<div className="chartContainer second animated fadeInUp">
-							<ChartBars chartData={humidities} color="#00FF6A" units="%"/>
-						</div>
-						<div className="chartContainer third animated fadeInUp">
-							<ChartSpots chartData={pressures} color="#FF6E00" units="%"/>
+							<ChartBars chartData={barChartNumbers} color="#00FF6A" units="%"/>
 						</div>
 					</section>		
 			</article>
@@ -69,7 +64,6 @@ class Charts extends Component {
 	render(){
 		return(
 			<div>
-				{this.props.charts.map(this.renderCharts)}
 		</div>
 			
 
@@ -83,17 +77,21 @@ class Charts extends Component {
 	return {charts: state.charts};
 } */
 
-// we can also write it with EMC6 syntax
- function mapStateToProps({ charts }){
+// exactly how it sounds, it maps the state into the props method
+// whatever returns, will show up as this.props inside of BookList
+// this is a built in function of React
+function mapStateToProps(state) {
 
- 	// this is how the function now looks
- 	/*
-	return { charts: charts }; */
+	// this defines the state of this component
+	return {
+		// this is the KEY or what we want to call what is attached to this component's .props
+		charts: 
+		// this is the actual DATA of the KEY data within reducers.js, which contains the JSON
+		state.charts
 
-	//this can be further condensed with ES6 like so:
-	// because both the key and the value object have the same identifier
-	return { charts };
-}
+	};
+
+};
 
 // if we are adding a reducer, we use mapstate to props, which is the first argument of connect, the second argument can be left empty
 // since there are no actions here

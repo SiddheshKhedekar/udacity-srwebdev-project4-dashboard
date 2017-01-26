@@ -34,40 +34,47 @@ class Charts extends Component {
 		const data = chartData.data;
 		const id = chartData.id;
 
-		const lineChartID = "1";		
-		var lineChartData = _.filter(id.includes(lineChartID));
-		var lineChartNumbers = lineChartData.map(thisChartData => thisChartData.data);
-
-		const barChartID = "2";		
-		let barChartData = _.filter(id.includes(barChartID));
-		var barChartNumbers = barChartData.map(thisChartData => thisChartData.data);
-
+		function renderFromData(){
+			if (id == "1"){
+				const lineChartData = data;
+				console.log("line "+lineChartData)
+				return (
+					<section>
+						<div className="chartContainer second animated fadeInUp">
+							<ChartSpots chartData={lineChartData} color="#00FF6A" units="%"/>
+						</div>
+					</section>
+					);
+			}
+			else {
+				const barChartData = data;
+				console.log("bar "+barChartData)
+				return (
+					<section>
+						<div className="chartContainer second animated fadeInUp">
+							<ChartBars chartData={barChartData} color="#00FF6A" units="%"/>
+						</div>
+					</section>
+					);
+			}
+		};
 		// sets up the variable to map each humidity array and generate our chart 
 
 		console.log("Names:" + names);
 		console.log("data:" + data);
-		console.log("line data:" + lineChartData);
 		return(
 			<article className="card animated fadeInDown" key={id}>
 				    <div className="card-block">
 				        <h4 className="card-title animated fadeInDown">Forecast for {name}</h4>
 				    </div>
-				    <section className="animated fadeInUp mapContainer">
-				    </section>
-					<section className="charts">
-						<div className="chartContainer first animated fadeInUp">
-							<ChartLines chartData={lineChartNumbers} color="#FF5200" units="Kelvin"/>
-						</div>
-						<div className="chartContainer second animated fadeInUp">
-							<ChartBars chartData={barChartNumbers} color="#00FF6A" units="%"/>
-						</div>
-					</section>		
+					<div>
+						{renderFromData()}
+					</div>
 			</article>
 		);
 	}
 	
 	render(){
-	console.log(this.state.charts);
 		return(
 			<div>
 			{this.props.charts.map(chartData => this.renderCharts(chartData))}

@@ -12,6 +12,10 @@ import { bindActionCreators } from 'redux';
 
 import selectView from '../actions/select_view'
 
+// imports lodash plugin
+import _ from 'lodash';
+
+
 class Nav extends Component {
 	constructor(props){
 		super(props);
@@ -21,14 +25,26 @@ class Nav extends Component {
 			currentlySelected: this.props.views
 		};
 	}
-  selectChildView(view){
+	searchButtonPress(event){
+
+		// creates 
+		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.id));
+
+		// sets the state based on filter
+		this.setState({
+			currentlySelected: searchFilter
+		});
+		console.log(this.state.searchTerm);
+		console.log(this.state.currentlySelected);
+	}
+  	selectChildView(view){
 		return this.props.selectView(view);
-  }
-  renderViewLinks(){
+  	}
+  	renderViewLinks(){
   	return this.state.currentlySelected.map((view) => {
   		return (
 			<div className="viewLink" key={view.name}>
-				<button onClick={() => this.selectChildView(view)}>{view.name}</button>
+				<button onClick={() => this.props.selectView(view)}>{view.name}</button>
 			</div>
 			);
 		});
@@ -68,7 +84,7 @@ class Nav extends Component {
 			                </li>
 							
 			                <li  data-toggle="collapse" data-target="#products" className="collapsed active">
-			                  <a href="#"><i className="fa fa-gift fa-lg"></i> {this.renderViewLinks()} <span className="arrow"></span></a>
+			                  <a href="#"><i className="fa fa-gift fa-lg"></i>{this.renderViewLinks()}</a>
 			                </li>
 			                <ul className="sub-menu collapse" id="products">
 			                    <li className="active"><a href="#">CSS3 Animation</a></li>

@@ -90,6 +90,9 @@ header {
 .card-block {
     padding-bottom: 0;
 }
+.navbar {
+    display: block !important;
+}
 /*===========================================================
 
     Sidemenu Component Styles
@@ -244,9 +247,6 @@ body {
   padding: 0px;
 }
 
-.nav-side-menu {
-    display: none;
-}
 /*===========================================================
 
     Search Bar Component Styles
@@ -396,6 +396,19 @@ article#geomap {
     padding: 0;
     padding-top: 1rem;
 }
+.nav-side-menu .brand {
+    padding-top: 0;
+}
+
+#sideMenu {
+    position: fixed;
+    width: 100%;
+    padding: 0 !important;
+}
+
+i.fa.fa-bars.fa-2x.toggle-btn {
+    margin-right: 2rem;
+}
 .col-md-6.card {
     width: 99%;
     margin: 1rem 0;
@@ -404,6 +417,9 @@ article#geomap {
 #charts {
     margin-bottom: 6rem;
     padding-bottom: 0;
+}
+.navbar {
+    display: none !important;
 }
 .detailCard {margin: 6rem 5% 0;width: 90% !important;}
 }

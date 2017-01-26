@@ -1,9 +1,10 @@
 ** Changelog for Dashoard
 
 v0.4
-- prototype to set up charts and chart data from reducers 
-- prototype to set up action / reducer / components for selecting dashboard pieces
-- begin adding sidebar bootstrap styles 
+- refactored data so only 3 reviews remain
+- set up actions / reducers / containers to properly display content
+- sidebar added to application, base code from : http://bootsnipp.com/snippets/featured/responsive-navigation-menu
+- 
 
 v0.3
 - added data table to the dashboard application

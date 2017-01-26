@@ -1,13 +1,27 @@
+
+
 import React, { Component } from 'react';
 
-import View from './view';
+// custom components
+import Nav from './nav';
+import Footer from './footer';
+import View from '../containers/view';
+import ViewSelected from '../containers/view_selected';
 
 export default class App extends Component {
   render() {
     return (
-    	<div>
-        <View />
+      <div>
+      <Nav />
+    	<main className="container">
+      <View />
+      <ViewSelected />
+      <div>
       </div>
+
+      </main>
+      <Footer />
+    </div>
     );
   }
 }

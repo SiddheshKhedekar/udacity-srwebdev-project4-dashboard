@@ -37,11 +37,17 @@ $ npm build
 
 [Redux] (http://redux.js.org/docs/introduction/)
 
+[jQuery] (https://jquery.com/)
+
 [ReduxSimpleStarter] (https://github.com/StephenGrider/ReduxSimpleStarter)
 
 [simple-data-table-map] (https://github.com/caspg/simple-data-table-map)
 
 [Bootstrap Responsive Navigation Menu] (http://bootsnipp.com/snippets/featured/responsive-navigation-menu)
+
+[jQuery datatables] (https://datatables.net/)
+
+[FLATICON - Dashboard Favicon] (http://www.flaticon.com)
 
 ##  Tutorials
 

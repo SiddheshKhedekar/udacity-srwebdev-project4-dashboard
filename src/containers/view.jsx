@@ -16,25 +16,8 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
-function listHide(containerHidden, containerShow, showSecond){
-		
-		var hide = document.querySelector(containerHidden);
-		var show = document.querySelector(containerShow);
-		var showSec = document.querySelector(showSecond);
-		// handles animations when list is hsiding
-		hide.classList.toggle('fadeOut');
-		hide.classList.toggle('fadeInUp');
+import listHide from '../components/render_functions'
 
-		// handlesviewHide classes
-		show.classList.toggle('fadeOut');
-		show.classList.toggle('hidden');
-		setTimeout(function(){
-			show.classList.toggle('fadeIn');
-		}, 1000);
-			hide.classList.toggle('hidden');
-
-		
-};
 
 class View extends Component {
 	// sets up the state handler for which books to display
@@ -61,23 +44,6 @@ class View extends Component {
 			currentlySelected: searchFilter
 		});
 	}
-	listHide(){
-		var hide = document.querySelector('.viewList');
-		var show = document.querySelector('.viewDetails');
-		// handles animations when list is hsiding
-		hide.classList.toggle('fadeOut');
-		hide.classList.toggle('fadeInUp');
-
-		// handlesviewHide classes
-		show.classList.toggle('fadeOut');
-		show.classList.toggle('hidden');
-		setTimeout(function(){
-			show.classList.toggle('fadeIn');
-		}, 1000);
-			hide.classList.toggle('hidden');
-
-		
-	};
 	// handles the category select setting of state
 	// will enable at a later date
 	categoryFilterChange(event){
@@ -112,7 +78,7 @@ class View extends Component {
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); this.listHide();}}
+					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>

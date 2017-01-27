@@ -23,7 +23,7 @@ class ViewSelected extends Component {
 		setTimeout(function(){
 			viewDetails.classList.add('hidden');
 			location.reload();
-		}, 200);
+		}, 100);
 		
 		// handles views for the view list
 		viewList.classList.remove('fadeOut');
@@ -42,7 +42,7 @@ class ViewSelected extends Component {
 		}
 		
 		return (
-		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeIn animated card">
+		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeInDown animated card">
 			
 			<section className="">
 

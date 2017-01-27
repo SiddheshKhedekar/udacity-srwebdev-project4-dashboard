@@ -7,22 +7,24 @@
 // 
 // shared functions to manipulate view components
 
-export default function listHide(containerHidden, containerShow, showSecond){
+export default function listHide(containerHidden, containerShow){
 		
 		var hide = document.querySelector(containerHidden);
 		var show = document.querySelector(containerShow);
-		var showSec = document.querySelector(showSecond);
 		// handles animations when list is hsiding
-		hide.classList.toggle('fadeOut');
-		hide.classList.toggle('fadeInUp');
+		hide.classList.add('fadeOutDown');
+		hide.classList.remove('fadeInUp');
 
 		// handlesviewHide classes
-		show.classList.toggle('fadeOut');
-		show.classList.toggle('hidden');
+		show.classList.remove('hidden');
+		show.classList.add('fadeInDown');
 		setTimeout(function(){
-			show.classList.toggle('fadeIn');
-		}, 1000);
-			hide.classList.toggle('hidden');
+			hide.classList.add('hidden');
+		}, 200);
+
+		setTimeout(function(){
+			show.classList.add('fadeInDown');
+		}, 1000);	
 
 		
 };

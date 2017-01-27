@@ -15,6 +15,8 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
+import listHide from '../components/render_functions'
+
 
 class Nav extends Component {
 	constructor(props){

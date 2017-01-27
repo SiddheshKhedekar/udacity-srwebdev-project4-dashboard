@@ -92,9 +92,13 @@ $(document).ready(function() {
 export default class Table extends Component {
   render() {
     return (
-        <div className="">
-			<table id="tableShrunk" className="display secondaryWidget" width="100%"></table>
+        <div>
+          <div id="mobileHandle">
+          <p>Switch to a Desktop Device to load the full table</p>
         </div>
+			  <table id="tableShrunk" className="display secondaryWidget"></table>
+        </div>
+
     );
   }
 }

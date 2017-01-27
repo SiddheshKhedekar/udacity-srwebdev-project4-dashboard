@@ -19,15 +19,16 @@ class ViewSelected extends Component {
 		var viewDetails = document.querySelector('.detailCard');
 		var viewList = document.querySelector('.viewList');
 
-		viewDetails.classList.add('fadeOut');
+
 		setTimeout(function(){
-			viewDetails.classList.add('hidden');
-		}, 1000);
+			location.reload();
+			viewDetails.classList.add('fadeOut');
+		}, 100);
 		
 		// handles views for the view list
-		viewList.classList.remove('fadeOut');
+		viewList.classList.remove('fadeInUp');
 		viewList.classList.remove('hidden');
-		viewList.classList.add('fadeInUp');
+		viewList.classList.add('fadeIn');
 		
 	}
 	render(){
@@ -41,7 +42,7 @@ class ViewSelected extends Component {
 		}
 		
 		return (
-		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeIn animated card">
+		<div id="viewDetails" className="col-md-12 viewDetails detailCard fadeInDown animated card">
 			
 			<section className="">
 
@@ -53,7 +54,7 @@ class ViewSelected extends Component {
 						</div>
 					</div>
 					<div className=""></div>
-            		<div className="componentContainer">
+            		<div className="componentContainer" id={this.props.view.name}>
 						{this.props.view.component}
 
 						

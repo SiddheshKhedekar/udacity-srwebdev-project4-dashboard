@@ -20,9 +20,9 @@ function viewReducer() {
 	
 	// returns an array with our data
 	return [
-		{ id:'1', component: <Table />, details:'View a report on our most recent issues', name:'table', active: '0'},
-		{ id:'2', component: <Map />, details:'These is the number and density of our employees across the US', name:'geomap', active: '0'},
-		{ id:'3', component: <Charts />, details:'Go through our charts reporting issues over time', name:'charts', active: '0'}
+		{ id:'1', component: <Table />, details:'View a report on our most recent issues', name:'table', active: '0', shortdesc:'most recent issues'},
+		{ id:'2', component: <Map />, details:'These is the number and density of our employees across the US', name:'geomap', active: '0', shortdesc:'employee geospatial view'},
+		{ id:'3', component: <Charts />, details:'Go through our charts reporting issues over time', name:'charts', active: '0', shortdesc:'charts with issue data'}
 ];
 
 }

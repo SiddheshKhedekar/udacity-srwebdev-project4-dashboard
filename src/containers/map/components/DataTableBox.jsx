@@ -5,7 +5,7 @@ import SelectBox from './SelectBox';
 export default class DataTableBox extends React.Component {
   render() {
     return (
-      <div className="data-table-box secondaryWidget hidden">
+      <div id="secondaryWidget" className="data-table-box hidden">
         <div className="mapDescription">
           <h3>Modify the number of employees per state</h3>
         </div>

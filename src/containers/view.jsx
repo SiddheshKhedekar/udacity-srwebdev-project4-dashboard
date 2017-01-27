@@ -16,7 +16,7 @@ import selectView from '../actions/select_view'
 // imports lodash plugin
 import _ from 'lodash';
 
-import {listHide} from '../components/render_functions.js'
+import listHide from '../components/render_functions'
 
 
 class View extends Component {
@@ -36,7 +36,7 @@ class View extends Component {
 	searchInputChange(event){
 
 		// creates 
-		let searchFilter = _.filter(this.props.views, view => view.name.includes(event.target.value.toLowerCase()));
+		let searchFilter = _.filter(this.props.views, view => view.shortdesc.includes(event.target.value.toLowerCase()));
 
 		// sets the state based on filter
 		this.setState({
@@ -45,6 +45,7 @@ class View extends Component {
 		});
 	}
 	// handles the category select setting of state
+	// will enable at a later date
 	categoryFilterChange(event){
 
 		const categoryFilterInit = _.filter(this.props.views,view => view.filter.includes("1"||"2"||"3"));
@@ -68,6 +69,7 @@ class View extends Component {
 			<article id={view.name} className="viewCard card col-md-12"
 				key={view.name} 
 			>
+			<h4 className="card-title">{view.shortdesc}</h4>
 			<div className={view.name}>{view.component}</div>
 
 		    <div className="card-block">
@@ -76,7 +78,7 @@ class View extends Component {
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
+					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>
@@ -106,7 +108,7 @@ class View extends Component {
 							placeholder="Filter Widgets by title"
 						 />
 					 </div>
-					 <div className="viewDetails"></div>
+					 <div className="viewDetails secondaryWidget"></div>
 				</div>
 				{this.renderList()}
 			</section>

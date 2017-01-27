@@ -11,7 +11,7 @@ import Map from './containers/App';
 export default class MapExport extends Component {
   render() {
     return (
-        <div>
+        <div className="animated fadeIn">
             <Map />
         </div>
     );

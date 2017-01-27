@@ -1,8 +1,8 @@
 ** Changelog for Dashoard
 
 v0.8
-- prototype to test responsive
-- prototype to fix bug with animations, fix ugly animation issues
+- tested, styled, and updated semantics for all responsive dimensions
+- fixed animation bug, and routing problem
 - prototype to test for production
 
 v0.7

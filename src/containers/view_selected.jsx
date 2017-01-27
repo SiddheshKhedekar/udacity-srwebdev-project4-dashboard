@@ -22,7 +22,8 @@ class ViewSelected extends Component {
 		viewDetails.classList.add('fadeOut');
 		setTimeout(function(){
 			viewDetails.classList.add('hidden');
-		}, 1000);
+			location.reload();
+		}, 200);
 		
 		// handles views for the view list
 		viewList.classList.remove('fadeOut');

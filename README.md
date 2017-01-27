@@ -47,6 +47,8 @@ $ npm build
 
 [jQuery datatables] (https://datatables.net/)
 
+[FLATICON - Dashboard Favicon] (http://www.flaticon.com)
+
 ##  Tutorials
 
 [Udemy - Modern React with Redux] (https://www.udemy.com/react-redux/)

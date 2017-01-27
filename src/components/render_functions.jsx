@@ -11,6 +11,7 @@ export default function listHide(containerHidden, containerShow){
 		
 		var hide = document.querySelector(containerHidden);
 		var show = document.querySelector(containerShow);
+		var secContainer = $(secondaryWidget);
 		// handles animations when list is hsiding
 		hide.classList.add('fadeOutDown');
 		hide.classList.remove('fadeInUp');

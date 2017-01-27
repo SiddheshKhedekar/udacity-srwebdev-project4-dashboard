@@ -78,7 +78,7 @@ class View extends Component {
 				<small> </small></h4>
 		        <p className="card-text">{view.description}</p>
 			        <a href="#" className="btn btn-primaryviewOpen"
-					onClick={() => {this.props.selectView(view); new listHide('.viewList', '.viewDetails');}}
+					onClick={() => {this.props.selectView(view); listHide('.viewList', '.viewDetails');}}
 			        >
 			        Learn More
 			        </a>
@@ -108,7 +108,7 @@ class View extends Component {
 							placeholder="Filter Widgets by title"
 						 />
 					 </div>
-					 <div className="viewDetails"></div>
+					 <div className="viewDetails secondaryWidget"></div>
 				</div>
 				{this.renderList()}
 			</section>

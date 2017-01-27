@@ -65,7 +65,7 @@ export default class SelectBox extends React.Component {
             <button className="btn add-button"
               disabled={!this.state.selected}
               onClick={this.handleButtonClick}>
-              <span className="glyphicon glyphicon-plus"></span>
+              <span className="fa fa-plus"></span>
             </button>
           </div>
       </div>

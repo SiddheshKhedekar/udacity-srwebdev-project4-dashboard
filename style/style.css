@@ -95,6 +95,9 @@ header {
 .navbar {
     display: block !important;
 }
+#searchBar {
+    padding: 0;
+}
 /*===========================================================
 
     Sidemenu Component Styles
@@ -351,7 +354,7 @@ span.fa.fa-plus {
 .Select-control {
     padding: inherit;
 }
-.select-box-container input[type="text"] {
+.detailCard .select-box-container input[type="text"] {
     border-bottom: solid 1px #ccc !important;
 }
 .remove-btn {
@@ -364,7 +367,7 @@ span.fa.fa-plus {
     height: 44px !important;
 }
 
-input[type="text"] {
+.detailCard input[type="text"] {
     border-bottom: 0 !important;
 }
 

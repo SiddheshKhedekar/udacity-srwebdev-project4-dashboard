@@ -19,16 +19,16 @@ class ViewSelected extends Component {
 		var viewDetails = document.querySelector('.detailCard');
 		var viewList = document.querySelector('.viewList');
 
-		viewDetails.classList.add('fadeOut');
+
 		setTimeout(function(){
-			viewDetails.classList.add('hidden');
 			location.reload();
+			viewDetails.classList.add('fadeOut');
 		}, 100);
 		
 		// handles views for the view list
-		viewList.classList.remove('fadeOut');
+		viewList.classList.remove('fadeInUp');
 		viewList.classList.remove('hidden');
-		viewList.classList.add('fadeInUp');
+		viewList.classList.add('fadeIn');
 		
 	}
 	render(){

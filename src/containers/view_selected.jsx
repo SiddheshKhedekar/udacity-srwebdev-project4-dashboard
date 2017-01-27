@@ -54,7 +54,7 @@ class ViewSelected extends Component {
 						</div>
 					</div>
 					<div className=""></div>
-            		<div className="componentContainer">
+            		<div className="componentContainer" id={this.props.view.name}>
 						{this.props.view.component}
 
 						

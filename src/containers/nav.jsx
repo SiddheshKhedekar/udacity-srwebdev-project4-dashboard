@@ -45,6 +45,9 @@ class Nav extends Component {
 
 		rMenu.classList.toggle('collapse');
 	}
+	navHome(){
+		location.reload();
+	}
   	renderClear(){
   		var clean = document.querySelector('.viewDeatils');
   	}
@@ -96,7 +99,14 @@ class Nav extends Component {
 			        <div className="menu-list">
 			  
 			            <ul id="menu-content" className="menu-content collapse out">
-							{this.renderViewLinks()}
+				            <div className="viewLink">
+				            <li onClick={() => this.navHome()}>
+				                  <a href="#">
+				                  <i className="fa fa-table fa-lg"></i>Table / All Widgets
+				                  </a>
+				            </li>
+				            </div>
+				            <div>{this.renderViewLinks()}</div>
 			            </ul>
 			     </div>
 			</div>

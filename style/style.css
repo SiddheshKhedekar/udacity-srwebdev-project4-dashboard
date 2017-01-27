@@ -249,6 +249,7 @@ body {
   height: auto;
   width: 100% !important;
   padding: 0px;
+  overflow-x: hidden !Important;
   max-width: 100% !Important;
   display: block;
 }
@@ -331,6 +332,9 @@ li.table {
 #mobileHandle {
     display: none;
 }
+.detailCard #geomap svg {
+    min-height: 600px !important;
+}
 /*===========================================================
 
    Table Widget Component Styles
@@ -402,6 +406,7 @@ main.container {
 
 section#viewDetails {
     margin-top: 3rem;
+    max-width: 96%;
 }
 
 article#geomap {
@@ -453,7 +458,7 @@ i.fa.fa-bars.fa-2x.toggle-btn {
     float: none;
     width: 90%;
 }
-.detailCard svg {
+.detailCard #geomap svg {
     min-height: 300px !important;
 }
 table#tableShrunk {
@@ -462,7 +467,7 @@ table#tableShrunk {
 #tableShrunk_wrapper {
     padding: 0 !important;
 }
-.card {width: 95% !important;max-width: 95% !important;margin: 2rem 2.5%;}
+.card {width: 100% !important;max-width: 100% !important;margin: 2rem 2.5%;}
 .detailCard {margin: 6rem 5% 6rem;width: 90% !important;padding: 0 !important;}
 }
 @media screen and (min-width: 1000px) and (max-width: 1600px) {
@@ -475,7 +480,7 @@ table#tableShrunk {
 h3.brand {
     padding-top: 0 !important;
 }
-.detailCard svg {
+.detailCard #geomap svg {
     min-height: 500px !important;
 }
 }
